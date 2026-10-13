@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Precios — MailBuilder</title>
+<meta name="description" content="Precios claros, sin sorpresas. Empieza gratis y crece cuando quieras. Planes para individuos, marketers y equipos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.px-section{padding:80px var(--pad)}
+.px-inner{max-width:var(--max);margin-inline:auto}
+.toggle-row{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:56px}
+.toggle-label{font-size:14px;font-weight:500;color:var(--tx2)}
+.toggle-label.on{color:var(--tx)}
+.toggle-badge{background:rgba(61,255,160,.12);color:var(--gr);border:1px solid rgba(61,255,160,.25);padding:2px 9px;border-radius:100px;font-size:11px;font-weight:700}
+.toggle-switch{width:44px;height:24px;background:var(--s4);border-radius:100px;position:relative;cursor:pointer;border:none;transition:background var(--r)}
+.toggle-switch.on{background:var(--am)}
+.toggle-thumb{width:18px;height:18px;background:#fff;border-radius:50%;position:absolute;top:3px;left:3px;transition:left var(--r)}
+.toggle-switch.on .toggle-thumb{left:23px}
+.px-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start;margin-bottom:80px}
+@media(max-width:900px){.px-grid{grid-template-columns:1fr}}
+.cmp-section{background:var(--s1);border-top:1px solid var(--bd);padding:80px var(--pad)}
+.cmp-inner{max-width:var(--max);margin-inline:auto;overflow-x:auto}
+.faq-section{padding:80px var(--pad)}
+.faq-inner{max-width:720px;margin-inline:auto}
+.enterprise-band{background:var(--s2);border:1px solid var(--bd);border-radius:20px;padding:48px;text-align:center;margin:80px var(--pad)}
+.enterprise-inner{max-width:560px;margin-inline:auto}
+.guarantee{display:flex;align-items:center;gap:12px;background:rgba(61,255,160,.06);border:1px solid rgba(61,255,160,.15);border-radius:12px;padding:16px 20px;margin-top:48px}
+.guarantee-ico{font-size:24px;flex-shrink:0}
+.guarantee-t{font-size:14px;font-weight:600;margin-bottom:3px}
+.guarantee-d{font-size:13px;color:var(--tx2)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><div class="nav-logo-mark"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#0F0E1A" stroke-width="2.2"/><path d="M3 9l9 5 9-5" stroke="#0F0E1A" stroke-width="2.2" stroke-linecap="round"/></svg></div>MailBuilder</a>
+    <div class="nav-links">
+      <div class="nav-dd">
+        <a href="/producto" class="nav-link" data-path="/producto">Producto <svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="nav-dd-menu">
+          <a href="/producto#editor" class="dd-item"><div class="dd-item-ico" style="background:rgba(255,203,69,.1)">✏️</div><div><div class="dd-item-t">Editor Visual</div><div class="dd-item-d">Arrastra, suelta y diseña sin código</div></div></a>
+          <a href="/producto#exportacion" class="dd-item"><div class="dd-item-ico" style="background:rgba(61,255,160,.1)">⬇️</div><div><div class="dd-item-t">Exportación</div><div class="dd-item-d">HTML, PNG, JPG y GIF en un clic</div></div></a>
+          <a href="/producto#ia" class="dd-item"><div class="dd-item-ico" style="background:rgba(167,139,250,.1)">✦</div><div><div class="dd-item-t">Panel de IA</div><div class="dd-item-d">Accesibilidad, spam y copy automático</div></div></a>
+          <a href="/producto#colaboracion" class="dd-item"><div class="dd-item-ico" style="background:rgba(91,142,255,.1)">👥</div><div><div class="dd-item-t">Colaboración</div><div class="dd-item-d">Cursores en vivo y chat del canvas</div></div></a>
+        </div>
+      </div>
+      <a href="/plantillas" class="nav-link" data-path="/plantillas">Plantillas</a>
+      <a href="/precios" class="nav-link active" data-path="/precios">Precios</a>
+    </div>
+    <div class="nav-right">
+      <a href="https://mailbuilder-pi.vercel.app/login" class="btn btn-ghost btn-sm">Ingresar</a>
+      <a href="https://mailbuilder-pi.vercel.app/login" class="btn btn-primary btn-sm btn-icon">Comenzar gratis <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+    <button class="nav-burger" id="burger"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-mobile" id="mobile-menu" style="display:none">
+    <a href="/">Inicio</a><a href="/producto">Producto</a><a href="/plantillas">Plantillas</a>
+    <hr class="sep">
+    <a href="https://mailbuilder-pi.vercel.app/login">Ingresar</a>
+    <a href="https://mailbuilder-pi.vercel.app/login" class="btn btn-primary" style="text-align:center;justify-content:center">Comenzar gratis →</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="chip">Precios y planes</div>
+    <h1 class="heading">Precios claros,<br>sin sorpresas.</h1>
+    <p class="lead">Empieza gratis para siempre. Actualiza solo cuando lo necesites. Sin cobros por asiento, sin contratos anuales obligatorios.</p>
+  </div>
+</div>
+
+<!-- PRICING -->
+<section class="px-section">
+  <div class="px-inner">
+    <div class="toggle-row">
+      <span class="toggle-label on" id="label-m">Mensual</span>
+      <button class="toggle-switch" id="price-toggle" aria-label="Toggle anual/mensual"><div class="toggle-thumb"></div></button>
+      <span class="toggle-label" id="label-a">Anual <span class="toggle-badge">2 meses gratis</span></span>
+    </div>
+    <div class="px-grid">
+      <!-- Gratis -->
+      <div class="price-card rv">
+        <div class="price-plan">Gratis</div>
+        <div class="price-desc">Para creadores y equipos que están comenzando.</div>
+        <div class="price-amount"><span class="price-val">$0</span><span class="price-per">/mes</span></div>
+        <div class="price-note">Gratis para siempre, sin tarjeta de crédito</div>
+        <hr class="price-divider">
+        <ul class="price-features">
+          <li class="price-feat si">5 proyectos de email</li>
+          <li class="price-feat si">Exportación HTML</li>
+          <li class="price-feat si">Editor visual de bloques</li>
+          <li class="price-feat si">Biblioteca básica de bloques</li>
+          <li class="price-feat si">Previsualización desktop y móvil</li>
+          <li class="price-feat no">Exportación PNG / JPG / GIF</li>
+          <li class="price-feat no">Panel de inteligencia artificial</li>
+          <li class="price-feat no">Colaboración en tiempo real</li>
+          <li class="price-feat no">Proyectos ilimitados</li>
+        </ul>
+        <a href="https://mailbuilder-pi.vercel.app/login" class="btn btn-outline price-cta">Empezar gratis</a>
+      </div>
+      <!-- Pro -->
+      <div class="price-card featured rv d1">
+        <div class="price-badge">Más popular</div>
+        <div class="price-plan">Pro</div>
+        <div class="price-desc">Para marketers que envían campañas frecuentes.</div>
+        <div class="price-amount">
+          <span class="price-val" data-monthly="$16" data-annual="$13">$16</span>
+          <span class="price-per">/mes</span>
+        </div>
+        <div class="price-note" data-note-monthly="Facturado mensualmente" data-note-annual="$156 al año — ahorras $36">Facturado mensualmente</div>
+        <hr class="price-divider">
+        <ul class="price-features">
+          <li class="price-feat si">Proyectos ilimitados</li>
+          <li class="price-feat si">Exportación HTML</li>
+          <li class="price-feat si">Editor WYSIWYG completo</li>
+          <li class="price-feat si">Biblioteca completa de bloques</li>
+          <li class="price-feat si">Exportación PNG + JPG + GIF</li>
+          <li class="price-feat si">Panel de inteligencia artificial</li>
+          <li class="price-feat si">Historial de versiones (30 días)</li>
+          <li class="price-feat no">Colaboración en tiempo real</li>
+          <li class="price-feat no">Múltiples espacios de trabajo</li>
+        </ul>
+        <a href="https://mailbuilder-pi.vercel.app/login" class="btn btn-primary price-cta btn-icon">14 días gratis · Sin compromiso <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <!-- Equipo -->
+      <div class="price-card rv d2">
+        <div class="price-plan">Equipo</div>
+        <div class="price-desc">Para agencias y equipos de diseño creativos.</div>
+        <div class="price-amount">
+          <span class="price-val" data-monthly="$49" data-annual="$39">$49</span>
+          <span class="price-per">/mes</span>
+        </div>
+        <div class="price-note" data-note-monthly="Hasta 10 asientos incluidos" data-note-annual="$468 al año — ahorras $120">Hasta 10 asientos incluidos</div>
+        <hr class="price-divider">
+        <ul class="price-features">
+          <li class="price-feat si">Todo lo del plan Pro</li>
+          <li class="price-feat si">Colaboración en tiempo real</li>
+          <li class="price-feat si">Chat del canvas en vivo</li>
+          <li class="price-feat si">Biblioteca compartida de plantillas</li>
+          <li class="price-feat si">Múltiples espacios de trabajo</li>
+          <li class="price-feat si">Historial de versiones ilimitado</li>
+          <li class="price-feat si">Soporte prioritario &lt;4h</li>
+          <li class="price-feat si">Exportación con marca propia</li>
+          <li class="price-feat si">Permisos por proyecto</li>
+        </ul>
+        <a href="https://mailbuilder-pi.vercel.app/login" class="btn btn-outline price-cta">Hablar con ventas</a>
+      </div>
+    </div>
+    <div class="guarantee rv">
+      <div class="guarantee-ico">🔒</div>
+      <div><div class="guarantee-t">14 días de prueba en el plan Pro — sin riesgo</div><div class="guarantee-d">Si no estás satisfecho, te devolvemos el dinero sin preguntas. Sin letra pequeña.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TABLA COMPARATIVA -->
+<section class="cmp-section">
+  <div class="cmp-inner">
+    <div class="sh sh-center rv" style="margin-bottom:40px">
+      <h2 class="heading">Comparación detallada</h2>
+      <p class="lead">Todo lo que obtienes en cada plan, sin letra pequeña.</p>
+    </div>
+    <table class="cmp-table">
+      <thead><tr><th>Funcionalidad</th><th>Gratis</th><th class="hi">Pro</th><th>Equipo</th></tr></thead>
+      <tbody>
+        <tr><td>Proyectos</td><td>5</td><td class="hi cmp-p">Ilimitados</td><td>Ilimitados</td></tr>
+        <tr><td>Editor visual de bloques</td><td class="cmp-y">✓</td><td class="hi cmp-y">✓</td><td class="cmp-y">✓</td></tr>
+        <tr><td>Previsualización desktop/móvil</td><td class="cmp-y">✓</td><td class="hi cmp-y">✓</td><td class="cmp-y">✓</td></tr>
+        <tr><td>Exportación HTML</td><td class="cmp-y">✓</td><td class="hi cmp-y">✓</td><td class="cmp-y">✓</td></tr>
+        <tr><td>Exportación PNG / JPG</td><td class="cmp-n">–</td><td class="hi cmp-y">✓</td><td class="cmp-y">✓</td></tr>
+        <tr><td>Exportación GIF animado</td><td class="cmp-n">–</td><td class="hi cmp-y">✓</td><td class="cmp-y">✓</td></tr>
+        <tr><td>Panel de inteligencia artificial</td><td class="cmp-n">–</td><td class="hi cmp-y">✓</td><td class="cmp-y">✓</td></tr>
+        <tr><td>Historial de versiones</td><td class="cmp-n">–</td><td class="hi">30 días</td><td>Ilimitado</td></tr>
+        <tr><td>Colaboración en tiempo real</td><td class="cmp-n">–</td><td class="hi cmp-n">–</td><td class="cmp-y">✓</td></tr>
+        <tr><td>Chat del canvas</td><td class="cmp-n">–</td><td class="hi cmp-n">–</td><td class="cmp-y">✓</td></tr>
+        <tr><td>Espacios de trabajo</td><td>1</td><td class="hi">1</td><td>Ilimitados</td></tr>
+        <tr><td>Soporte</td><td>Comunidad</td><td class="hi">Email &lt;24h</td><td class="cmp-p">Prioritario &lt;4h</td></tr>
+        <tr><td>Asientos</td><td>1</td><td class="hi">1</td><td class="cmp-p">Hasta 10</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="faq-inner">
+    <div class="sh sh-center rv" style="margin-bottom:40px">
+      <h2 class="heading">Preguntas frecuentes</h2>
+    </div>
+    <div class="faq-item rv"><button class="faq-q">¿Necesito tarjeta de crédito para el plan gratuito? <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><div class="faq-a">No. El plan gratuito es 100% gratuito y permanente. Solo necesitas un email para registrarte. No pedimos datos de pago en ningún momento mientras uses el plan gratuito.</div></div>
+    <div class="faq-item rv"><button class="faq-q">¿Puedo cancelar mi suscripción cuando quiera? <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><div class="faq-a">Sí, puedes cancelar en cualquier momento desde tu panel de configuración. No hay penalizaciones ni periodos de aviso. Al cancelar, tu cuenta vuelve al plan gratuito y conservas todos tus proyectos.</div></div>
+    <div class="faq-item rv"><button class="faq-q">¿Qué pasa con mis emails si cancelo? <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><div class="faq-a">Tus proyectos no se eliminan al cancelar. Puedes seguir accediendo a todos tus emails creados — simplemente vuelves a los límites del plan gratuito (5 proyectos activos). El resto queda archivado y accesible.</div></div>
+    <div class="faq-item rv"><button class="faq-q">¿El HTML exportado funciona en todos los clientes de email? <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><div class="faq-a">Sí. Probamos y garantizamos compatibilidad con Gmail, Outlook (2016, 2019, 2021, 365), Apple Mail, Yahoo Mail, Thunderbird y más de 35 clientes adicionales. El código generado sigue las mejores prácticas de email HTML.</div></div>
+    <div class="faq-item rv"><button class="faq-q">¿Puedo usar MailBuilder con mi plataforma de email marketing? <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><div class="faq-a">Absolutamente. Exportas el HTML y lo pegas directamente en Mailchimp, HubSpot, Klaviyo, ActiveCampaign, Brevo, Sendinblue o cualquier otra plataforma. MailBuilder es compatible con todas.</div></div>
+    <div class="faq-item rv"><button class="faq-q">¿Ofrecen descuento para ONGs o educación? <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><div class="faq-a">Sí, ofrecemos descuentos del 50% para organizaciones sin fines de lucro y del 30% para instituciones educativas. Escríbenos a hola@mailbuilder.app con tu comprobante y lo activamos en 24 horas.</div></div>
+  </div>
+</section>
+
+<!-- ENTERPRISE -->
+<div style="max-width:var(--max);margin:0 auto;padding:0 var(--pad) 80px">
+  <div class="enterprise-band rv">
+    <div class="enterprise-inner">
+      <div class="chip az" style="margin-bottom:18px">Enterprise</div>
+      <h2 class="subheading" style="margin-bottom:14px">¿Equipo grande o necesidades especiales?</h2>
+      <p style="font-size:15px;color:var(--tx2);margin-bottom:28px;line-height:1.75">Para equipos de más de 10 personas, integraciones personalizadas, SLA garantizado, onboarding dedicado o facturación corporativa — hablemos.</p>
+      <div class="flex-center flex-gap">
+        <a href="mailto:hola@mailbuilder.app" class="btn btn-primary btn-lg">Contactar ventas</a>
+        <a href="https://mailbuilder-pi.vercel.app/login" class="btn btn-outline btn-lg">Ver demo</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand"><a href="/" class="nav-logo" style="font-size:16px"><div class="nav-logo-mark" style="width:26px;height:26px;border-radius:7px"><svg viewBox="0 0 24 24" fill="none" style="width:14px;height:14px"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#0F0E1A" stroke-width="2.2"/><path d="M3 9l9 5 9-5" stroke="#0F0E1A" stroke-width="2.2" stroke-linecap="round"/></svg></div>MailBuilder</a><p>El editor profesional de emails para diseñadores y marketers.</p></div>
+      <div class="footer-col"><h4>Producto</h4><ul><li><a href="/producto">Funciones</a></li><li><a href="/plantillas">Plantillas</a></li><li><a href="/precios">Precios</a></li></ul></div>
+      <div class="footer-col"><h4>Empresa</h4><ul><li><a href="#">Sobre nosotros</a></li><li><a href="#">Contacto</a></li></ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul><li><a href="#">Privacidad</a></li><li><a href="#">Términos</a></li></ul></div>
+    </div>
+    <div class="footer-bot"><span class="footer-copy">© 2025 MailBuilder.</span><div class="footer-social"><a href="#" class="social-btn">𝕏</a><a href="#" class="social-btn">in</a></div></div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script>
+// Toggle anual/mensual con botón visual
+const toggle = document.getElementById('price-toggle');
+const lm = document.getElementById('label-m');
+const la = document.getElementById('label-a');
+if(toggle){
+  toggle.addEventListener('click',()=>{
+    const on = toggle.classList.toggle('on');
+    lm.classList.toggle('on',!on);
+    la.classList.toggle('on',on);
+    document.querySelectorAll('[data-monthly]').forEach(el=>{
+      el.textContent = on ? el.dataset.annual : el.dataset.monthly;
+    });
+    document.querySelectorAll('[data-note-monthly]').forEach(el=>{
+      el.textContent = on ? el.dataset.noteAnnual : el.dataset.noteMonthly;
+    });
+  });
+}
+</script>
+</body>
+</html>
