@@ -1,6 +1,7 @@
 /* MailBuilder — Shared JS */
 
-const APP_URL = "https://mailbuilder-pi.vercel.app";
+/* La app vive en mailbuilder.site (la web la enlaza; ver initCtaLinks). */
+const APP_URL = "https://mailbuilder.site";
 
 /* ── Nav: scroll effect + mobile menu ── */
 function initNav() {
@@ -64,6 +65,8 @@ function initFilter() {
         const show = cat === "all" || card.dataset.cat === cat;
         card.style.display = show ? "" : "none";
       });
+      const n = document.getElementById("tmpl-n");
+      if (n) n.textContent = cat === "all" ? "todas" : document.querySelectorAll(`.tmpl-card[data-cat="${cat}"]`).length;
     });
   });
 }
@@ -122,6 +125,25 @@ function initCtaLinks() {
   document.querySelectorAll("a[data-cta]").forEach(a => {
     a.href = APP_URL + (a.dataset.cta || "/login");
   });
+  document.querySelectorAll("[data-year]").forEach(el => { el.textContent = new Date().getFullYear(); });
+}
+
+/* ── Video de presentación: se descarga solo al pedirlo, y con sonido ── */
+function initPromoVideo() {
+  const video = document.getElementById("promo");
+  const play = document.getElementById("promo-play");
+  if (!video || !play) return;
+  const frame = video.closest(".video-frame");
+  play.addEventListener("click", () => {
+    frame.classList.add("playing");
+    video.controls = true;
+    video.play().catch(() => { frame.classList.remove("playing"); });
+  });
+  video.addEventListener("ended", () => {
+    frame.classList.remove("playing");
+    video.controls = false;
+    video.load(); // vuelve a la portada
+  });
 }
 
 /* ── Boot ── */
@@ -133,6 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initPricing();
   initHeroAnim();
   initCtaLinks();
+  initPromoVideo();
 
   // Counter animation on first scroll-in
   const numEls = document.querySelectorAll(".count-up");
