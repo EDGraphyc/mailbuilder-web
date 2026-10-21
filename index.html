@@ -7,7 +7,7 @@
 <meta name="description" content="MailBuilder es el constructor visual de emails y landing pages en español. Plantillas de email, exportación HTML, PNG y GIF, y páginas web con formularios. Gratis para empezar.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="/img/favicon.png">
 <meta name="theme-color" content="#0b0c10">
 <!-- SEO -->
@@ -161,155 +161,93 @@
 <!-- /SEO -->
 <link rel="stylesheet" href="style.css">
 <style>
-.hero{min-height:100vh;display:flex;align-items:center;padding:120px var(--pad) 60px;position:relative;overflow:hidden}
-.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 60% 30%,rgba(167,139,250,.12) 0%,transparent 60%),radial-gradient(ellipse 50% 50% at 15% 80%,rgba(77,143,244,.07) 0%,transparent 55%);pointer-events:none}
-.hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:72px 72px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 30%,transparent 80%);pointer-events:none}
-.hero-inner{max-width:var(--max);margin-inline:auto;width:100%;position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-.hero-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:28px;flex-wrap:wrap}
-.hero-sp{font-size:12.5px;color:var(--tx2);display:flex;align-items:center;gap:6px}
-.hero-h1{font-size:clamp(40px,5vw,70px);font-weight:900;letter-spacing:-.04em;line-height:1.0;margin-bottom:22px}
-.hero-h1 .line2{display:block;color:var(--tx3);font-weight:300}
-.hero-sub{font-size:17px;font-weight:300;color:var(--tx2);line-height:1.8;margin-bottom:36px;max-width:480px}
-.hero-sub strong{color:var(--tx);font-weight:600}
-.hero-ctarow{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:14px}
-.hero-note{font-size:12px;color:var(--tx3)}
-.hero-note span{color:var(--tx2)}
-.hero-stats{display:flex;gap:32px;padding-top:36px;border-top:1px solid var(--bd);margin-top:8px;flex-wrap:wrap}
-.hero-stat-n{font-size:28px;font-weight:800;letter-spacing:-.04em;line-height:1}
-.hero-stat-l{font-size:12px;color:var(--tx2);margin-top:3px}
-.hero-preview-wrap{border-radius:16px;background:var(--s2);border:1px solid var(--bd);overflow:hidden;box-shadow:0 0 0 1px rgba(255,255,255,.04) inset,0 50px 100px rgba(0,0,0,.7),0 0 70px rgba(167,139,250,.07);transform:perspective(1200px) rotateY(-6deg) rotateX(2deg);transform-origin:left center;transition:transform .5s ease}
-.hero-preview-wrap:hover{transform:perspective(1200px) rotateY(-2deg) rotateX(1deg)}
-.ep-bar{background:var(--s3);border-bottom:1px solid var(--bd);padding:0 14px;height:38px;display:flex;align-items:center;gap:10px}
-.ep-tabs{display:flex;gap:2px;margin-left:8px}
-.ep-tab{padding:4px 12px;border-radius:5px;font-size:11px;font-weight:500;color:var(--tx3)}
-.ep-tab.on{background:var(--s4);color:var(--tx)}
-.ep-layout{display:grid;grid-template-columns:44px 1fr 200px;height:400px}
-.ep-sb{background:var(--s3);border-right:1px solid var(--bd);display:flex;flex-direction:column;align-items:center;padding:10px 0;gap:3px}
-.ep-si{width:30px;height:30px;border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--tx3);cursor:pointer;transition:all .15s}
-.ep-si.on,.ep-si:hover{background:rgba(77,143,244,.1);color:var(--am)}
-.ep-si svg{width:14px;height:14px}
-.ep-si-sep{width:24px;height:1px;background:var(--bd);margin:4px 0}
-.ep-canvas{background:#1a1828;overflow:hidden;display:flex;flex-direction:column;align-items:center;padding:16px;position:relative}
-.ep-dev{display:flex;gap:6px;margin-bottom:12px}
-.ep-dev-b{padding:3px 10px;border-radius:5px;font-size:10.5px;color:var(--tx3);border:1px solid transparent}
-.ep-dev-b.on{background:var(--s4);border-color:var(--bd);color:var(--tx)}
-.ep-email{background:#fff;border-radius:8px 8px 0 0;width:100%;max-width:300px;overflow:hidden;box-shadow:0 -4px 20px rgba(0,0,0,.4)}
-.ee-hdr{background:#1a1a2e;padding:12px 16px;display:flex;align-items:center;justify-content:center;gap:6px}
-.ee-logo{width:16px;height:16px;background:var(--am);border-radius:4px;display:flex;align-items:center;justify-content:center}
-.ee-logo svg{width:9px;height:9px}
-.ee-brand{color:#fff;font-weight:700;font-size:11px}
-.ee-hero-img{height:120px;background:linear-gradient(135deg,#1D1F3A 0%,#2D1F5E 40%,#1A3A5C 100%);position:relative;overflow:hidden}
-.ee-hero-img::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 60% 50%,rgba(91,142,255,.25) 0%,transparent 60%)}
-.ee-hero-txt{position:absolute;bottom:12px;left:14px;right:14px}
-.ee-hero-h{color:#fff;font-weight:700;font-size:12px;font-family:'Inter',sans-serif;margin-bottom:2px}
-.ee-hero-s{color:rgba(255,255,255,.65);font-size:9px;font-family:'Inter',sans-serif}
-.ee-block{background:#fff;padding:12px 16px;position:relative}
-.ee-block.sel{outline:2px solid var(--am);outline-offset:-2px}
-.ee-block-lbl{position:absolute;top:-8px;right:8px;background:var(--am);color:#0F0E1A;font-size:7.5px;font-weight:800;padding:2px 6px;border-radius:3px;font-family:'Inter',sans-serif}
-.ee-h{font-size:12px;font-weight:700;color:#111;font-family:'Inter',sans-serif;margin-bottom:4px;line-height:1.3}
-.ee-p{font-size:10px;color:#666;font-family:'Inter',sans-serif;line-height:1.55}
-.ee-cta{margin:10px 14px;background:var(--am);border-radius:5px;padding:8px;text-align:center}
-.ee-cta-t{font-size:10px;font-weight:700;color:#0F0E1A;font-family:'Inter',sans-serif}
-.ee-footer{background:#f8f8f8;padding:10px 14px;text-align:center}
-.ee-footer-t{font-size:8.5px;color:#aaa;font-family:'Inter',sans-serif}
-.ep-cursor{position:absolute;z-index:20;pointer-events:none;animation:cursor-mv 6s ease-in-out infinite alternate}
-@keyframes cursor-mv{0%{transform:translate(50px,140px)}33%{transform:translate(100px,200px)}66%{transform:translate(160px,155px)}100%{transform:translate(120px,250px)}}
-.ep-cursor svg{width:14px;height:14px}
-.ep-cursor-tag{position:absolute;top:13px;left:10px;background:var(--az);color:#fff;font-size:9px;font-weight:600;padding:2px 7px;border-radius:100px;white-space:nowrap;font-family:'Inter',sans-serif}
-.ep-insp{border-left:1px solid var(--bd);background:var(--s2);overflow:hidden}
-.ep-insp-tabs{display:flex;border-bottom:1px solid var(--bd);background:var(--s3)}
-.ep-insp-tab{flex:1;padding:8px 0;font-size:10.5px;font-weight:500;color:var(--tx3);background:none;border:none;cursor:pointer;font-family:'Inter',sans-serif;border-bottom:2px solid transparent}
-.ep-insp-tab.on{color:var(--am);border-color:var(--am)}
-.ep-insp-body{padding:10px 9px;display:flex;flex-direction:column;gap:10px}
-.ep-isec-lbl{font-size:8.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--tx3);margin-bottom:4px}
-.ep-field{background:var(--s3);border:1px solid var(--bd);border-radius:5px;padding:5px 8px;font-size:10.5px;color:var(--tx2);font-family:'Inter',sans-serif}
-.ep-colors{display:flex;gap:4px}
-.ep-swatch{width:16px;height:16px;border-radius:4px;cursor:pointer}
-.ep-swatch.sel{outline:2px solid #fff;outline-offset:2px}
-.ep-slider-row{display:flex;align-items:center;gap:6px}
-.ep-slider{flex:1;height:3px;background:var(--bd);border-radius:2px;position:relative}
-.ep-slider-fill{height:100%;background:var(--am);border-radius:2px}
-.ep-slider-th{width:9px;height:9px;border-radius:50%;background:#fff;border:1.5px solid var(--am);position:absolute;top:-3px}
-.ep-val{font-size:10px;color:var(--tx2);min-width:24px;text-align:right}
-@media(max-width:960px){.hero-inner{grid-template-columns:1fr}.hero-preview{display:none}}
-.prob-section{padding:100px var(--pad);background:var(--s1);position:relative;overflow:hidden}
-.prob-section::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--bg) 0%,var(--s1) 20%,var(--s1) 80%,var(--bg) 100%)}
-.prob-inner{max-width:var(--max);margin-inline:auto;position:relative;z-index:1}
-.prob-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-.pain-cards{display:flex;flex-direction:column;gap:12px}
-.pain-card{background:var(--s2);border:1px solid var(--bd);border-radius:14px;padding:18px 20px;display:flex;gap:14px;align-items:flex-start;position:relative;overflow:hidden}
-.pain-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px}
-.pain-card.red::before{background:#FF5757}.pain-card.yellow::before{background:#FFB800}.pain-card.gray::before{background:var(--tx3)}
-.pain-card-ico{width:36px;height:36px;border-radius:9px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:16px}
-.pain-card.red .pain-card-ico{background:rgba(255,87,87,.12)}
-.pain-card.yellow .pain-card-ico{background:rgba(255,184,0,.1)}
-.pain-card.gray .pain-card-ico{background:var(--s4)}
-.pain-title{font-size:14px;font-weight:600;margin-bottom:3px}
-.pain-desc{font-size:12.5px;color:var(--tx2);line-height:1.55}
-@media(max-width:900px){.prob-grid{grid-template-columns:1fr;gap:48px}}
-.feats-overview{padding:100px var(--pad)}
-.feat-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:56px}
-@media(max-width:1000px){.feat-cards{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){.feat-cards{grid-template-columns:1fr}}
-.feat-card-link{color:var(--am);font-size:13px;font-weight:600;display:inline-flex;align-items:center;gap:5px;margin-top:14px;transition:gap var(--r)}
-.feat-card-link:hover{gap:8px}
-.journey-section{padding:100px var(--pad);background:var(--s1)}
-.journey-grid{max-width:var(--max);margin-inline:auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
-@media(max-width:900px){.journey-grid{grid-template-columns:1fr}}
-.hero-plus{color:var(--am);font-weight:700}
-.verts-section{padding:100px var(--pad) 0}
-.verts-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-@media(max-width:900px){.verts-grid{grid-template-columns:1fr}}
-.vert-card{background:var(--s2);border:1px solid var(--bd);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:border-color var(--r),transform var(--r)}
-.vert-card:hover{border-color:var(--tx3);transform:translateY(-4px)}
-.vert-card:hover .feat-card-link{gap:8px}
-.vert-body{padding:26px 28px 30px}
-.vert-kicker{font-size:13px;font-weight:600;color:var(--tx2);margin-bottom:10px;display:flex;align-items:center;gap:6px}
-.vert-body h3{font-size:22px;font-weight:800;letter-spacing:-.02em;line-height:1.2;margin-bottom:6px}
-.vert-art{height:230px;position:relative;overflow:hidden;border-bottom:1px solid var(--bd);display:flex;align-items:flex-end;justify-content:center}
-.vert-art-email{background:radial-gradient(ellipse 70% 80% at 50% 100%,rgba(77,143,244,.22),transparent 70%),var(--s1)}
-.vert-art-landing{background:radial-gradient(ellipse 70% 80% at 50% 100%,rgba(139,92,246,.22),transparent 70%),var(--s1)}
-.va-line{height:7px;border-radius:4px;background:#d9dde6;margin:6px 0}
-.va-line.short{width:60%}
-.va-btn{height:20px;width:46%;border-radius:5px;background:var(--am);margin-top:10px}
-.va-mail{width:56%;background:#fff;border-radius:10px 10px 0 0;padding:12px 14px 22px;box-shadow:0 -10px 40px rgba(0,0,0,.45);transform:translateY(8px);transition:transform .5s ease}
-.vert-card:hover .va-mail{transform:translateY(0)}
-.va-mail-hdr{height:14px;width:34%;margin:0 auto 10px;border-radius:4px;background:#e7e9ef}
-.va-mail-hero{height:72px;border-radius:6px;background:linear-gradient(135deg,#2a6ad4,#8B5CF6);margin-bottom:8px}
-.va-browser{width:74%;background:#fff;border-radius:10px 10px 0 0;overflow:hidden;box-shadow:0 -10px 40px rgba(0,0,0,.45);transform:translateY(8px);transition:transform .5s ease}
-.vert-card:hover .va-browser{transform:translateY(0)}
-.va-bar{height:22px;background:#eef0f4;display:flex;align-items:center;gap:4px;padding:0 9px}
-.va-bar i{width:6px;height:6px;border-radius:50%;background:#c9cdd6}
-.va-bar span{margin-left:8px;font-size:8.5px;color:#8a8f99;background:#fff;border-radius:4px;padding:1px 8px}
-.va-page{padding:10px 14px 18px;display:grid;grid-template-columns:1.3fr 1fr;gap:12px}
-.va-nav{grid-column:1/-1;height:8px;width:30%;border-radius:4px;background:#e7e9ef}
-.va-hero-l .va-line{height:10px;background:#1c1f27}
-.va-hero-l .va-line.short{background:#c5c9d2;height:7px}
-.va-form{background:#f3f4f8;border-radius:7px;padding:9px}
-.va-form div:not(.va-btn){height:12px;border-radius:4px;background:#fff;border:1px solid #e1e4ea;margin-bottom:6px}
-.va-form .va-btn{width:100%;margin-top:4px;background:var(--vi2)}
-.va-phone{position:absolute;right:9%;bottom:-6px;width:74px;height:136px;background:#fff;border-radius:14px;border:4px solid #20232b;padding:16px 8px;box-shadow:0 14px 40px rgba(0,0,0,.55);transition:transform .5s ease}
-.vert-card:hover .va-phone{transform:translateY(-8px) rotate(-2deg)}
-.va-phone .va-btn{width:100%;background:var(--vi2)}
-.video-section{padding:40px var(--pad) 100px}
-.video-frame{position:relative;max-width:1080px;margin-inline:auto;border-radius:20px;overflow:hidden;border:1px solid var(--bd);background:#000;aspect-ratio:16/9;box-shadow:0 40px 100px rgba(0,0,0,.6),0 0 90px rgba(139,92,246,.14)}
+/* Inicio */
+.hero{padding:150px var(--pad) 40px;position:relative;overflow:hidden;text-align:center}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(77,143,244,.16),transparent 70%);pointer-events:none}
+.hero-inner{max-width:860px;margin-inline:auto;position:relative}
+.hero-kicker{display:inline-flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px 10px;font-size:14px;color:var(--tx2);margin-bottom:26px}
+@media(max-width:600px){.hero{padding-top:120px}.hero-kicker{font-size:13px}}
+.hero-kicker a{color:var(--tx);font-weight:600;border-bottom:1px solid var(--bd);padding-bottom:1px}
+.hero-kicker a:hover{border-color:var(--am)}
+.hero-new{font-size:11px;font-weight:700;color:#fff;background:var(--vi2);border-radius:6px;padding:2px 7px}
+.hero h1{font-size:clamp(38px,5.4vw,68px);font-weight:800;letter-spacing:-.035em;line-height:1.04;margin-bottom:22px}
+.hero h1 em{font-style:normal;color:var(--am)}
+.hero-sub{font-size:clamp(16px,1.6vw,19px);color:var(--tx2);line-height:1.7;max-width:640px;margin:0 auto 34px}
+.hero-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.hero-small{margin-top:16px;font-size:13px;color:var(--tx3)}
+
+.stage{position:relative;max-width:1180px;margin:56px auto 0;padding:0 var(--pad)}
+.shot{border-radius:14px;overflow:hidden;border:1px solid var(--bd);background:var(--s1);box-shadow:0 40px 90px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.03) inset}
+.shot img{display:block;width:100%;height:auto}
+.note{position:absolute;font-family:'Caveat',cursive;font-size:24px;line-height:1.1;color:#ffd166;display:flex;align-items:flex-start;gap:6px;pointer-events:none;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+.note svg{flex-shrink:0;width:54px;height:40px}
+.note-a{left:-128px;top:26%;max-width:150px;flex-direction:column;align-items:flex-end;text-align:right}
+.note-b{right:-136px;top:8%;max-width:150px;flex-direction:column}
+@media(max-width:1420px){.stage .note{display:none}}
+@media(max-width:1000px){.note{display:none}}
+
+.trust{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px 26px;padding:34px var(--pad) 0;font-size:13.5px;color:var(--tx3)}
+.trust b{color:var(--tx2);font-weight:600}
+
+.video-section{padding:110px var(--pad) 40px}
+.video-head{max-width:var(--max);margin:0 auto 28px;display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.video-head h2{font-size:clamp(28px,3.4vw,42px);font-weight:800;letter-spacing:-.03em;line-height:1.1}
+.video-head p{color:var(--tx2);max-width:420px;font-size:15px}
+.video-frame{position:relative;max-width:var(--max);margin-inline:auto;border-radius:18px;overflow:hidden;border:1px solid var(--bd);background:#000;aspect-ratio:16/9;box-shadow:0 40px 100px rgba(0,0,0,.6)}
 .video-frame video{display:block;width:100%;height:100%;object-fit:cover}
-.video-play{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:flex-start;gap:14px;padding:28px;background:linear-gradient(180deg,transparent 55%,rgba(11,12,16,.7));border:none;color:#fff;cursor:pointer;transition:background var(--r)}
-.video-play:hover{background:linear-gradient(180deg,transparent 45%,rgba(11,12,16,.6))}
-.video-play-ico{width:64px;height:64px;flex-shrink:0;border-radius:50%;background:var(--am);color:#0b0c10;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 10px rgba(77,143,244,.2);transition:transform var(--r),box-shadow var(--r)}
-.video-play:hover .video-play-ico{transform:scale(1.07);box-shadow:0 0 0 16px rgba(77,143,244,.18)}
+.video-play{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:flex-start;gap:14px;padding:28px;background:linear-gradient(180deg,transparent 55%,rgba(11,12,16,.7));border:none;color:#fff;cursor:pointer}
+.video-play-ico{width:64px;height:64px;flex-shrink:0;border-radius:50%;background:var(--am);color:#0b0c10;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 10px rgba(77,143,244,.2);transition:transform var(--r)}
+.video-play:hover .video-play-ico{transform:scale(1.07)}
 .video-play-ico svg{width:26px;height:26px;margin-left:3px}
 .video-play-t{font-size:17px;font-weight:700;text-align:left;line-height:1.2;text-shadow:0 2px 12px rgba(0,0,0,.6)}
 .video-play-t small{display:block;font-size:12.5px;font-weight:500;color:rgba(255,255,255,.75)}
 .video-frame.playing .video-play{display:none}
-@media(max-width:600px){.video-play{padding:14px}.video-play-ico{width:48px;height:48px}.video-play-ico svg{width:20px;height:20px}.video-play-t{font-size:14px}.video-frame{border-radius:14px}}
-.faq-home{padding:100px var(--pad) 100px}
+
+.tour{padding:100px var(--pad) 20px}
+.tour-row{max-width:var(--max);margin:0 auto 120px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px;align-items:center}
+.tour-row.flip{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+.tour-row.flip .tour-text{order:2}
+.tour-num{font-family:'Caveat',cursive;font-size:26px;color:var(--am);margin-bottom:6px}
+.tour-text h2{font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-.03em;line-height:1.12;margin-bottom:16px}
+.tour-text p{color:var(--tx2);font-size:16px;line-height:1.75;margin-bottom:14px}
+.tour-text .quiet{font-size:14px;color:var(--tx3)}
+.tour-media{position:relative}
+.tour-pair{display:grid;grid-template-columns:minmax(0,1fr) 180px;gap:18px;align-items:end}
+.phone{border-radius:28px;overflow:hidden;border:6px solid #20232b;box-shadow:0 30px 70px rgba(0,0,0,.6);background:#20232b}
+.phone img{display:block;width:100%;height:auto}
+.panel{max-width:340px;margin-left:auto;border-radius:14px;overflow:hidden;border:1px solid var(--bd);box-shadow:0 30px 70px rgba(0,0,0,.5)}
+.panel img{display:block;width:100%;height:auto}
+.tour-media .note{position:absolute}
+.note-c{right:-30px;bottom:-62px;max-width:260px;flex-direction:row;align-items:center}
+@media(max-width:900px){.tour-row,.tour-row.flip{grid-template-columns:1fr;gap:34px;margin-bottom:84px}.tour-row.flip .tour-text{order:0}.tour-pair{grid-template-columns:1fr 34%}.panel{max-width:none}}
+
+.tpl-strip{max-width:var(--max);margin:0 auto;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.tpl-track{display:flex;gap:16px;width:max-content;animation:slide 60s linear infinite}
+.tpl-strip:hover .tpl-track{animation-play-state:paused}
+.tpl-track img{width:300px;height:auto;border-radius:12px;border:1px solid var(--bd);display:block}
+@keyframes slide{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.tpl-track{animation:none}}
+.tpl-cta{text-align:center;margin-top:30px}
+
+.day{padding:110px var(--pad);background:var(--s1);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd)}
+.day-inner{max-width:860px;margin-inline:auto}
+.day h2{font-size:clamp(28px,3.4vw,42px);font-weight:800;letter-spacing:-.03em;line-height:1.1;margin-bottom:12px}
+.day > .day-inner > p{color:var(--tx2);font-size:16px;margin-bottom:46px}
+.day-list{border-left:2px solid var(--bd);padding-left:30px;display:flex;flex-direction:column;gap:30px}
+.day-item{position:relative}
+.day-item::before{content:"";position:absolute;left:-39px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--am)}
+.day-time{font-family:'Caveat',cursive;font-size:24px;color:var(--am);line-height:1}
+.day-item h3{font-size:17px;font-weight:700;margin:4px 0 4px}
+.day-item p{color:var(--tx2);font-size:15px;line-height:1.7}
+
+.faq-home{padding:110px var(--pad)}
 .faq-home .faq-inner{max-width:760px;margin-inline:auto}
+.faq-home .heading{font-size:clamp(28px,3.4vw,42px)}
+.cta-band h2 em{font-style:normal;color:var(--am)}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav id="nav">
   <div class="nav-inner">
     <a href="/" class="nav-logo"><img src="/img/isotipo.png" alt="MailBuilder" class="nav-logo-mark" width="30" height="29">MailBuilder</a>
@@ -317,12 +255,12 @@
       <div class="nav-dd">
         <a href="/producto" class="nav-link" data-path="/producto">Producto <svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <div class="nav-dd-menu">
-          <div class="dd-group">Dos mesas de trabajo</div>
-          <a href="/producto#email" class="dd-item"><div class="dd-item-ico" style="background:rgba(77,143,244,.12)">✉️</div><div><div class="dd-item-t">Email marketing</div><div class="dd-item-d">Campañas que se ven bien en cualquier bandeja</div></div></a>
-          <a href="/producto#landing" class="dd-item"><div class="dd-item-ico" style="background:rgba(139,92,246,.12)">🌐</div><div><div class="dd-item-t">Landing <span class="dd-new">Nuevo</span></div><div class="dd-item-d">Páginas web con formularios, sin código</div></div></a>
-          <div class="dd-group">En ambas</div>
-          <a href="/producto#ia" class="dd-item"><div class="dd-item-ico" style="background:rgba(61,255,160,.1)">✦</div><div><div class="dd-item-t">Inteligencia</div><div class="dd-item-d">Revisa el texto y si está listo para publicar</div></div></a>
-          <a href="/producto#colaboracion" class="dd-item"><div class="dd-item-ico" style="background:rgba(255,95,143,.1)">👥</div><div><div class="dd-item-t">Equipo y marcas</div><div class="dd-item-d">Proyectos por marca y cursores en vivo</div></div></a>
+          <div class="dd-group">Lo que diseñas</div>
+          <a href="/producto#email" class="dd-item"><div class="dd-item-ico ico-az"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></div><div><div class="dd-item-t">Email marketing</div><div class="dd-item-d">Campañas que se ven bien en cualquier bandeja</div></div></a>
+          <a href="/producto#landing" class="dd-item"><div class="dd-item-ico ico-vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9M12 3C9.5 5.6 8.2 8.6 8.2 12s1.3 6.4 3.8 9"/></svg></div><div><div class="dd-item-t">Landing <span class="dd-new">Nuevo</span></div><div class="dd-item-d">Páginas web con formularios, sin código</div></div></a>
+          <div class="dd-group">Para las dos</div>
+          <a href="/producto#ia" class="dd-item"><div class="dd-item-ico ico-gr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l1.9 5 5 1.9-5 1.9-1.9 5-1.9-5-5-1.9 5-1.9z"/><path d="M19 15.5l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></svg></div><div><div class="dd-item-t">Inteligencia</div><div class="dd-item-d">Revisa el texto y si está listo para publicar</div></div></a>
+          <a href="/producto#colaboracion" class="dd-item"><div class="dd-item-ico ico-ro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.4-3.4 3.2-6 6.5-6s6.1 2.6 6.5 6"/><path d="M15.5 4.6a3.5 3.5 0 0 1 0 6.8M21.5 20c-.3-2.6-1.9-4.8-4.2-5.7"/></svg></div><div><div class="dd-item-t">Equipo y marcas</div><div class="dd-item-d">Proyectos por marca y cursores en vivo</div></div></a>
         </div>
       </div>
       <a href="/plantillas" class="nav-link" data-path="/plantillas">Plantillas</a>
@@ -349,206 +287,106 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <div>
-      <div class="hero-eyebrow">
-        <a href="/producto#landing" class="chip vi">Nuevo · Landing</a>
-        <div class="hero-sp">Email marketing <span class="hero-plus">+</span> Landing, en un solo software</div>
-      </div>
-      <h1 class="hero-h1">Emails y landings<br><span class="grad">que convierten.</span><span class="line2">Sin código.</span></h1>
-      <p class="hero-sub">MailBuilder es el <strong>constructor de emails y landing pages</strong> sin código: diseña la campaña y la página a la que lleva, con la misma marca y en el mismo lugar. Para marketers y diseñadores que <strong>toman en serio sus campañas</strong> y no quieren depender del equipo técnico.</p>
-      <div class="hero-ctarow">
-        <a href="https://mailbuilder.site/login" class="btn btn-primary btn-lg btn-icon">Empezar gratis <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <a href="#video" class="btn btn-outline btn-lg btn-icon">▶ Ver cómo funciona</a>
-      </div>
-      <p class="hero-note">✓ Sin tarjeta de crédito &nbsp;·&nbsp; ✓ Plan gratuito permanente &nbsp;·&nbsp; ✓ <span>Listo en &lt;2 minutos</span></p>
-      <div class="hero-stats">
-        <div><div class="hero-stat-n">2</div><div class="hero-stat-l">Mesas de trabajo: Email y Landing</div></div>
-        <div><div class="hero-stat-n">4</div><div class="hero-stat-l">Formatos: HTML, PNG, JPG y GIF</div></div>
-        <div><div class="hero-stat-n">$0</div><div class="hero-stat-l">Para empezar</div></div>
-      </div>
+    <div class="hero-kicker"><span class="hero-new">Nuevo</span> Ahora también haces landings. <a href="/producto#landing">Ver cómo</a></div>
+    <h1>El email de tu campaña y la página a la que lleva, <em>hechos en el mismo lugar.</em></h1>
+    <p class="hero-sub">MailBuilder es un constructor de emails y landing pages sin código. Arrastras bloques, cambias textos y listo. Y cuando el cliente pide otro tono de azul a las seis de la tarde, lo cambias una vez y queda igual en el correo y en la página.</p>
+    <div class="hero-ctas">
+      <a href="https://mailbuilder.site/login" data-cta class="btn btn-primary btn-lg btn-icon">Crear mi cuenta gratis <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="#video" class="btn btn-outline btn-lg">Ver el video (49 s)</a>
     </div>
-    <div class="hero-preview rv">
-      <div class="hero-preview-wrap">
-        <div class="ep-bar">
-          <div class="mac-dots"><div class="mac-dot"></div><div class="mac-dot"></div><div class="mac-dot"></div></div>
-          <div class="ep-tabs"><div class="ep-tab on">📧 Campaña Verano</div><div class="ep-tab">Newsletter</div></div>
-          <div style="margin-left:auto"><div style="background:var(--am);color:#0F0E1A;padding:4px 12px;border-radius:5px;font-size:10.5px;font-weight:700">⬇ Exportar</div></div>
-        </div>
-        <div class="ep-layout">
-          <div class="ep-sb">
-            <div class="ep-si on"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.8"/><rect x="13" y="3" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.8"/><rect x="3" y="13" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.8"/><rect x="13" y="13" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.8"/></svg></div>
-            <div class="ep-si"><svg viewBox="0 0 24 24" fill="none"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
-            <div class="ep-si-sep"></div>
-            <div class="ep-si"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
-          </div>
-          <div class="ep-canvas">
-            <div class="ep-dev"><div class="ep-dev-b on">🖥 Escritorio</div><div class="ep-dev-b">📱 Móvil</div></div>
-            <div class="ep-email">
-              <div class="ee-hdr"><div class="ee-logo"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#0F0E1A" stroke-width="2.5"/><path d="M3 9l9 5 9-5" stroke="#0F0E1A" stroke-width="2.5" stroke-linecap="round"/></svg></div><span class="ee-brand">BrandCo</span></div>
-              <div class="ee-hero-img"><div class="ee-hero-txt"><div class="ee-hero-h">Gran Oferta de Verano</div><div class="ee-hero-s">Solo por tiempo limitado — 50% off</div></div></div>
-              <div class="ee-block sel">
-                <div class="ee-block-lbl">EDITANDO</div>
-                <div class="ee-h">No te pierdas esta oportunidad</div>
-                <div class="ee-p">Hemos preparado algo especial para ti esta semana.</div>
-              </div>
-              <div class="ee-cta"><div class="ee-cta-t">Ver ofertas →</div></div>
-              <div class="ee-footer"><div class="ee-footer-t">© BrandCo · Cancelar suscripción</div></div>
-            </div>
-            <div class="ep-cursor">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M4.2 3.1 L19.4 11.1 L11.6 12.9 L8.3 19.8 Z" fill="#5B8EFF" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg>
-              <div class="ep-cursor-tag">María G.</div>
-            </div>
-          </div>
-          <div class="ep-insp">
-            <div class="ep-insp-tabs"><button class="ep-insp-tab on">Contenido</button><button class="ep-insp-tab">Estilo</button></div>
-            <div class="ep-insp-body">
-              <div><div class="ep-isec-lbl">Texto</div><div class="ep-field">No te pierdas esta...</div></div>
-              <div><div class="ep-isec-lbl">Tipografía</div><div class="ep-field">Inter · 18px</div></div>
-              <div><div class="ep-isec-lbl">Color</div><div class="ep-colors"><div class="ep-swatch sel" style="background:#111"></div><div class="ep-swatch" style="background:#1D4ED8"></div><div class="ep-swatch" style="background:#4D8FF4"></div><div class="ep-swatch" style="background:#DC2626"></div><div class="ep-swatch" style="background:#16A34A"></div></div></div>
-              <div><div class="ep-isec-lbl">Tamaño</div><div class="ep-slider-row"><div class="ep-slider"><div class="ep-slider-fill" style="width:45%"></div><div class="ep-slider-th" style="left:45%"></div></div><div class="ep-val">18px</div></div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <p class="hero-small">Gratis para empezar. No te pedimos tarjeta.</p>
   </div>
+
+  <div class="stage">
+    <div class="shot"><img src="/img/app/editor-email.webp" alt="Editor de emails de MailBuilder con un correo de bienvenida abierto" width="1920" height="1200" fetchpriority="high"></div>
+    <div class="note note-a"><svg viewBox="0 0 60 44" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8c16 0 30 8 48 24"/><path d="M43 33l9 0-1-9"/></svg>arrastras un bloque y ya está en el correo</div>
+    <div class="note note-b"><svg viewBox="0 0 60 44" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M56 6C40 8 22 18 8 34"/><path d="M16 35l-8-1 0-9"/></svg>cada bloque tiene sus ajustes aquí, sin código</div>
+  </div>
+
+  <div class="trust"><span>Exporta para <b>Mailchimp</b>, <b>HubSpot</b>, <b>Klaviyo</b>, <b>Brevo</b> o la plataforma que uses</span><span>·</span><span>Se ve bien en <b>Gmail</b>, <b>Outlook</b> y <b>Apple Mail</b></span></div>
 </section>
 
 <!-- VIDEO -->
 <section class="video-section" id="video">
-  <div class="lc">
-    <div class="sh sh-center rv" style="margin-bottom:40px">
-      <div class="chip vi">Míralo en acción</div>
-      <h2 class="heading" style="margin-top:14px">MailBuilder en 50 segundos.</h2>
-    </div>
-    <div class="video-frame rv d1">
-      <video id="promo" preload="none" playsinline poster="/img/mailbuilder-poster.jpg" aria-label="Video de presentación de MailBuilder">
-        <source src="/img/mailbuilder-1080.mp4" type="video/mp4">
-      </video>
-      <button class="video-play" id="promo-play" aria-label="Reproducir video">
-        <span class="video-play-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13a1 1 0 001.5.86l10.5-6.5a1 1 0 000-1.72L9.5 4.64A1 1 0 008 5.5z"/></svg></span>
-        <span class="video-play-t">Ver video <small>0:49 · con sonido</small></span>
-      </button>
-    </div>
+  <div class="video-head">
+    <h2>MailBuilder en 49 segundos.</h2>
+    <p>Lo grabamos con el producto de verdad: los mismos correos y pantallas que vas a usar.</p>
+  </div>
+  <div class="video-frame">
+    <video id="promo" preload="none" playsinline poster="/img/mailbuilder-poster.jpg" aria-label="Video de presentación de MailBuilder">
+      <source src="/img/mailbuilder-1080.mp4" type="video/mp4">
+    </video>
+    <button class="video-play" id="promo-play" aria-label="Reproducir video">
+      <span class="video-play-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13a1 1 0 001.5.86l10.5-6.5a1 1 0 000-1.72L9.5 4.64A1 1 0 008 5.5z"/></svg></span>
+      <span class="video-play-t">Ver video <small>0:49 · con sonido</small></span>
+    </button>
   </div>
 </section>
 
-<!-- COMPATIBILIDAD -->
-<div class="logos-strip">
-  <div class="logos-inner">
-    <span class="logos-label">Tus emails, listos para</span>
-    <div class="logos-sep"></div>
-    <div class="logos-list">
-      <span class="logo-item">Gmail</span><span class="logo-item">Outlook</span>
-      <span class="logo-item">Apple Mail</span><span class="logo-item">Mailchimp</span>
-      <span class="logo-item">HubSpot</span><span class="logo-item">Klaviyo</span>
+<!-- RECORRIDO -->
+<section class="tour" id="recorrido">
+
+  <div class="tour-row">
+    <div class="tour-text">
+      <div class="tour-num">antes de enviar</div>
+      <h2>Te avisa del error antes de que lo vea tu cliente.</h2>
+      <p>Mientras diseñas, el panel de Inteligencia revisa la ortografía, la redacción, el riesgo de spam y la accesibilidad. Y te dice qué pasa en palabras normales: «este botón no lleva a ningún lado».</p>
+      <p>Cada aviso viene con la forma de arreglarlo, así que no tienes que adivinar.</p>
+      <p class="quiet">La ortografía se revisa con LanguageTool. La redacción se analiza en tu navegador.</p>
+    </div>
+    <div class="tour-media">
+      <div class="shot"><img src="/img/app/inteligencia-editor.webp" alt="Panel de Inteligencia de MailBuilder revisando un email" width="1600" height="1109" loading="lazy"></div>
+      <div class="note note-c"><svg viewBox="0 0 60 44" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 34c18 0 34-8 48-26"/><path d="M42 7l10 0 0 10"/></svg>el botón sin enlace: el descuido más común</div>
     </div>
   </div>
-</div>
 
-<!-- PROBLEMA -->
-<section class="prob-section">
-  <div class="prob-inner">
-    <div class="prob-grid">
-      <div class="rv">
-        <div class="chip">El problema real</div>
-        <h2 class="heading" style="margin-top:14px;margin-bottom:20px">Una campaña no termina en el email.</h2>
-        <p class="lead">El email lleva a una página. Y casi siempre se hacen con herramientas distintas, por personas distintas, con colores que no coinciden. Hay que saber HTML, esperar al desarrollador o conformarse con plantillas genéricas.</p>
-        <a href="/producto" class="btn btn-outline" style="margin-top:28px">Ver la solución →</a>
-      </div>
-      <div class="pain-cards rv d2">
-        <div class="pain-card red"><div class="pain-card-ico">😤</div><div><div class="pain-title">Depender del equipo técnico</div><div class="pain-desc">Cada cambio de texto pasa por un desarrollador. Días de espera para ajustar un botón de color.</div></div></div>
-        <div class="pain-card yellow"><div class="pain-card-ico">🤯</div><div><div class="pain-title">HTML roto en el cliente de correo</div><div class="pain-desc">Gmail, Outlook, Apple Mail — cada uno lo renderiza diferente. El email perfecto llega hecho pedazos.</div></div></div>
-        <div class="pain-card gray"><div class="pain-card-ico">🧩</div><div><div class="pain-title">El email y la landing no se parecen</div><div class="pain-desc">Una herramienta para el correo, otra para la página. Dos accesos, dos marcas a medias y una experiencia que se rompe en el clic.</div></div></div>
-      </div>
+  <div class="tour-row flip" id="landing">
+    <div class="tour-text">
+      <div class="tour-num">la página a la que lleva</div>
+      <h2>La landing, en escritorio y en celular, desde el mismo editor.</h2>
+      <p>Las landings se arman igual que los correos: eliges una plantilla de sitio y cambias textos, imágenes y colores. Tienes capas y grupos, como en una herramienta de diseño, y una vista de celular que se acomoda sola.</p>
+      <p>Los formularios guardan cada registro. Cuando la página está lista, la publicas con un clic.</p>
+    </div>
+    <div class="tour-media tour-pair">
+      <div class="shot"><img src="/img/app/editor-landing.webp" alt="Editor de landing pages de MailBuilder con capas y formulario" width="1920" height="1200" loading="lazy"></div>
+      <div class="phone"><img src="/img/app/landing-movil.webp" alt="Vista de celular de la misma landing" width="700" height="1169" loading="lazy"></div>
     </div>
   </div>
-</section>
 
-<!-- DOS MESAS DE TRABAJO -->
-<section class="verts-section lc" id="verticales">
-  <div class="sh sh-center rv">
-    <div class="chip az">La misma lógica, dos mesas de trabajo</div>
-    <h2 class="heading" style="margin-top:14px">El email y su landing.<br>Un solo software.</h2>
-    <p class="lead">Lo que aprendes en una ya lo sabes usar en la otra: el mismo editor, los mismos proyectos por marca, la misma revisión inteligente.</p>
-  </div>
-  <div class="verts-grid">
-    <a href="/producto#email" class="vert-card rv d1">
-      <div class="vert-art vert-art-email" aria-hidden="true">
-        <div class="va-mail">
-          <div class="va-mail-hdr"></div>
-          <div class="va-mail-hero"></div>
-          <div class="va-line"></div><div class="va-line short"></div>
-          <div class="va-btn"></div>
-        </div>
-      </div>
-      <div class="vert-body">
-        <div class="vert-kicker">✉️ Email marketing</div>
-        <h3>Campañas que llegan bien a cualquier bandeja.</h3>
-        <ul class="feat-points">
-          <li>Editor visual de bloques, escritorio y móvil</li>
-          <li>Exporta en HTML, PNG, JPG o GIF animado</li>
-          <li>Revisión de spam, accesibilidad y copy</li>
-        </ul>
-        <span class="feat-card-link">Conocer Email marketing →</span>
-      </div>
-    </a>
-    <a href="/producto#landing" class="vert-card rv d2">
-      <div class="vert-art vert-art-landing" aria-hidden="true">
-        <div class="va-browser">
-          <div class="va-bar"><i></i><i></i><i></i><span>tumarca.com</span></div>
-          <div class="va-page">
-            <div class="va-nav"></div>
-            <div class="va-hero-l"><div class="va-line"></div><div class="va-line short"></div><div class="va-btn"></div></div>
-            <div class="va-form"><div></div><div></div><div class="va-btn"></div></div>
-          </div>
-        </div>
-        <div class="va-phone"><div class="va-line"></div><div class="va-line short"></div><div class="va-btn"></div></div>
-      </div>
-      <div class="vert-body">
-        <div class="vert-kicker">🌐 Landing <span class="dd-new">Nuevo</span></div>
-        <h3>Páginas web con formularios, sin código.</h3>
-        <ul class="feat-points">
-          <li>Plantillas de sitio listas para cada objetivo</li>
-          <li>Diseño para escritorio y celular, con capas y auto layout</li>
-          <li>Publica con un clic y recibe los registros</li>
-        </ul>
-        <span class="feat-card-link">Conocer Landing →</span>
-      </div>
-    </a>
-  </div>
-</section>
-
-<!-- FUNCIONES -->
-<section class="feats-overview lc">
-  <div class="sh sh-center rv">
-    <div class="chip">En ambas mesas de trabajo</div>
-    <h2 class="heading" style="margin-top:14px">Una herramienta.<br>Todo lo que tu marca necesita.</h2>
-    <p class="lead">Diseña con libertad total. Sin código, sin esperas, sin compromiso con la calidad.</p>
-  </div>
-  <div class="feat-cards">
-    <div class="card rv d1"><div class="card-icon" style="background:rgba(77,143,244,.1)">✏️</div><div class="card-title">Editor visual</div><div class="card-desc">Arrastra bloques, edita en línea, ajusta estilos. Lo que ves es lo que se envía y se publica.</div><a href="/producto#email" class="feat-card-link">Explorar →</a></div>
-    <div class="card rv d2"><div class="card-icon" style="background:rgba(61,255,160,.1)">⬇️</div><div class="card-title">Exporta y publica</div><div class="card-desc">Emails en HTML, PNG, JPG o GIF. Landings publicadas con un clic o descargadas en HTML.</div><a href="/producto#exportacion" class="feat-card-link">Explorar →</a></div>
-    <div class="card rv d3"><div class="card-icon" style="background:rgba(167,139,250,.1)">✦</div><div class="card-title">Inteligencia</div><div class="card-desc">Revisa el texto, la accesibilidad y si la pieza está lista para enviarse o publicarse.</div><a href="/producto#ia" class="feat-card-link">Explorar →</a></div>
-    <div class="card rv d4"><div class="card-icon" style="background:rgba(91,142,255,.1)">👥</div><div class="card-title">Equipo y marcas</div><div class="card-desc">Proyectos por marca, espacios de trabajo compartidos, roles y cursores en vivo.</div><a href="/producto#colaboracion" class="feat-card-link">Explorar →</a></div>
-  </div>
-</section>
-
-<!-- JOURNEY -->
-<section class="journey-section">
-  <div class="journey-grid">
-    <div>
-      <div class="chip gr rv">Empieza en minutos</div>
-      <h2 class="heading rv" style="margin-top:14px;margin-bottom:18px">¿Qué pasa cuando<br>te registras?</h2>
-      <p class="lead rv">De cero a tu primera campaña en minutos. Sin formularios largos, sin tarjeta de crédito.</p>
-      <a href="https://mailbuilder.site/login" class="btn btn-primary btn-lg btn-icon rv" style="margin-top:28px">Empezar ahora — es gratis <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  <div class="tour-row">
+    <div class="tour-text">
+      <div class="tour-num">si llevas varias marcas</div>
+      <h2>Cada marca tiene su carpeta, con sus correos y sus landings.</h2>
+      <p>Si trabajas para varios clientes, cada uno tiene su proyecto, con su portada, sus colores y sus piezas, y las ve todo tu equipo. Puedes mover un correo de un proyecto a otro, y ves en vivo quién está editando qué.</p>
     </div>
-    <div class="journey rv d2">
-      <div class="journey-step"><div class="journey-num" style="color:var(--am);border-color:var(--am);background:rgba(77,143,244,.08)">1</div><div class="journey-content"><div class="journey-title">Crea tu cuenta en 30 segundos</div><div class="journey-desc">Solo tu email y contraseña. Sin formularios largos, sin datos de pago, sin burocracia.</div></div></div>
-      <div class="journey-step"><div class="journey-num">2</div><div class="journey-content"><div class="journey-title">Elige: un email o una landing</div><div class="journey-desc">Empieza desde una plantilla de email, un sitio listo para tu objetivo o en blanco.</div></div></div>
-      <div class="journey-step"><div class="journey-num">3</div><div class="journey-content"><div class="journey-title">Diseña con la marca de tu cliente</div><div class="journey-desc">Todo se organiza por proyecto. Colores, fuentes y logos de la marca a un clic, en ambas mesas de trabajo.</div></div></div>
-      <div class="journey-step"><div class="journey-num">4</div><div class="journey-content"><div class="journey-title">La IA revisa todo automáticamente</div><div class="journey-desc">Accesibilidad, spam, peso del email y sugerencias de copy — todo antes de que lo envíes.</div></div></div>
-      <div class="journey-step"><div class="journey-num" style="color:var(--gr);border-color:var(--gr);background:rgba(61,255,160,.08)">✓</div><div class="journey-content"><div class="journey-title">Envía el email y publica la landing</div><div class="journey-desc">HTML listo para Mailchimp, HubSpot o Klaviyo, y la página publicada con su propia dirección.</div></div></div>
+    <div class="tour-media">
+      <div class="shot"><img src="/img/app/proyectos.webp" alt="Proyectos por marca en MailBuilder" width="1600" height="1218" loading="lazy"></div>
+    </div>
+  </div>
+
+</section>
+
+<!-- PLANTILLAS -->
+<section style="padding:0 var(--pad) 110px">
+  <div class="sh sh-center" style="margin-bottom:34px">
+    <h2 class="heading" style="font-size:clamp(28px,3.4vw,42px)">No empiezas de cero.</h2>
+    <p class="lead">Plantillas de email y de landing que ya vienen hechas. Las cambias a la marca de tu cliente y listo.</p>
+  </div>
+  <div class="tpl-strip"><div class="tpl-track"><img src="/img/app/tpl-email-1.webp" alt="Plantilla de email: Bono de bienvenida" width="362" height="240" loading="lazy"><img src="/img/app/tpl-email-2.webp" alt="Plantilla de email: Recarga con bono" width="362" height="240" loading="lazy"><img src="/img/app/tpl-email-3.webp" alt="Plantilla de email: Torneo de tragamonedas" width="362" height="240" loading="lazy"><img src="/img/app/tpl-email-4.webp" alt="Plantilla de email: Apuesta en vivo" width="362" height="240" loading="lazy"><img src="/img/app/tpl-email-5.webp" alt="Plantilla de email: Lanzamiento de nuevo juego" width="362" height="240" loading="lazy"><img src="/img/app/tpl-landing-1.webp" alt="Plantilla de landing: Captación de clientes" width="362" height="235" loading="lazy"><img src="/img/app/tpl-landing-2.webp" alt="Plantilla de landing: Servicios profesionales" width="362" height="235" loading="lazy"><img src="/img/app/tpl-landing-3.webp" alt="Plantilla de landing: Producto digital" width="362" height="235" loading="lazy"><img src="/img/app/tpl-landing-5.webp" alt="Plantilla de landing: Evento o webinar" width="362" height="235" loading="lazy"><img src="/img/app/tpl-landing-6.webp" alt="Plantilla de landing: Newsletter o lista de espera" width="362" height="235" loading="lazy"><img src="/img/app/tpl-email-1.webp" alt="Plantilla de email: Bono de bienvenida" width="362" height="240" loading="lazy"><img src="/img/app/tpl-email-2.webp" alt="Plantilla de email: Recarga con bono" width="362" height="240" loading="lazy"><img src="/img/app/tpl-email-3.webp" alt="Plantilla de email: Torneo de tragamonedas" width="362" height="240" loading="lazy"><img src="/img/app/tpl-email-4.webp" alt="Plantilla de email: Apuesta en vivo" width="362" height="240" loading="lazy"><img src="/img/app/tpl-email-5.webp" alt="Plantilla de email: Lanzamiento de nuevo juego" width="362" height="240" loading="lazy"><img src="/img/app/tpl-landing-1.webp" alt="Plantilla de landing: Captación de clientes" width="362" height="235" loading="lazy"><img src="/img/app/tpl-landing-2.webp" alt="Plantilla de landing: Servicios profesionales" width="362" height="235" loading="lazy"><img src="/img/app/tpl-landing-3.webp" alt="Plantilla de landing: Producto digital" width="362" height="235" loading="lazy"><img src="/img/app/tpl-landing-5.webp" alt="Plantilla de landing: Evento o webinar" width="362" height="235" loading="lazy"><img src="/img/app/tpl-landing-6.webp" alt="Plantilla de landing: Newsletter o lista de espera" width="362" height="235" loading="lazy"></div></div>
+  <div class="tpl-cta"><a href="/plantillas" class="btn btn-outline btn-icon">Ver todas las plantillas <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+</section>
+
+<!-- UN DÍA -->
+<section class="day">
+  <div class="day-inner">
+    <h2>Un martes cualquiera con MailBuilder.</h2>
+    <p>Así queda armada una campaña completa en una mañana, con el email y su landing:</p>
+    <div class="day-list">
+      <div class="day-item"><div class="day-time">9:00</div><h3>Llega el pedido</h3><p>Promo de fin de mes: un correo para la base y una página con formulario para los que hagan clic.</p></div>
+      <div class="day-item"><div class="day-time">9:15</div><h3>Eliges dos plantillas</h3><p>Una de email y una de landing, dentro del proyecto del cliente. Con su kit de marca, el logo y los colores quedan a un clic.</p></div>
+      <div class="day-item"><div class="day-time">10:05</div><h3>Inteligencia encuentra un detalle</h3><p>El botón principal no tenía enlace. Lo pegas, y de paso corriges una tilde que se había escapado.</p></div>
+      <div class="day-item"><div class="day-time">10:40</div><h3>Revisas en celular</h3><p>El cliente pide el botón más grande. Lo agrandas una vez y queda igual en las dos piezas.</p></div>
+      <div class="day-item"><div class="day-time">11:00</div><h3>Envías y publicas</h3><p>Exportas el HTML a tu plataforma de envío y publicas la landing. Desde ahí, los registros del formulario llegan a MailBuilder.</p></div>
     </div>
   </div>
 </section>
@@ -557,8 +395,7 @@
 <section class="faq-home lc" id="preguntas">
   <div class="faq-inner">
     <div class="sh sh-center rv" style="margin-bottom:40px">
-      <div class="chip">Preguntas frecuentes</div>
-      <h2 class="heading" style="margin-top:14px">Constructor de emails y landing pages: lo que debes saber.</h2>
+      <h2 class="heading" style="margin-top:14px">Lo que nos suelen preguntar.</h2>
     </div>
     <div class="faq-item rv"><button class="faq-q">¿Qué es MailBuilder? <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><div class="faq-a">MailBuilder es un constructor visual de emails y landing pages en español. Diseñas tus plantillas de email y las páginas web a las que llevan en un solo lugar, sin escribir código, con la marca de cada cliente organizada por proyecto.</div></div>
     <div class="faq-item rv"><button class="faq-q">¿MailBuilder es gratis? <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><div class="faq-a">Sí. Puedes empezar gratis, sin tarjeta de crédito, y crear tus primeros emails y landings. Los planes de pago agregan más proyectos y funciones avanzadas.</div></div>
@@ -572,17 +409,15 @@
 <!-- CTA FINAL -->
 <div class="cta-band">
   <div class="cta-band-inner">
-    <h2 class="rv">Tu próxima campaña<br>y su landing empiezan <em>aquí.</em></h2>
-    <p class="rv d1">Crea el email y la página en el mismo lugar, con la misma marca. Gratis para empezar.</p>
-    <div class="cta-band-btns rv d2">
-      <a href="https://mailbuilder.site/login" class="btn btn-primary btn-lg btn-icon">Crear mi cuenta gratis <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      <a href="/precios" class="btn btn-outline btn-lg">Ver planes →</a>
+    <h2>Haz tu primera campaña <em>hoy.</em></h2>
+    <p>Crea tu cuenta, elige una plantilla y mira cómo queda con tu marca. Es gratis para empezar.</p>
+    <div class="cta-band-btns">
+      <a href="https://mailbuilder.site/login" data-cta class="btn btn-primary btn-lg btn-icon">Crear mi cuenta gratis <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="/plantillas" class="btn btn-outline btn-lg">Ver plantillas</a>
     </div>
-    <p class="cta-note">✓ Sin tarjeta · ✓ Sin límite de tiempo · ✓ Cancela cuando quieras</p>
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-top">

@@ -247,7 +247,9 @@ footer { background: var(--bg); border-top: 1px solid var(--bd); padding: 72px v
 .feat-text p { font-size: 15px; color: var(--tx2); line-height: 1.8; margin-bottom: 14px; }
 .feat-points { display: flex; flex-direction: column; gap: 9px; margin-top: 20px; }
 .feat-point { display: flex; align-items: flex-start; gap: 9px; font-size: 14px; font-weight: 500; }
-.feat-point::before { content: "✦"; color: var(--am); font-size: 10px; margin-top: 4px; flex-shrink: 0; }
+.feat-point::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--am); margin-top: 8px; flex-shrink: 0; }
+.feat-points li { display: flex; gap: 10px; font-size: 14.5px; color: var(--tx2); line-height: 1.6; }
+.feat-points li::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--am); margin-top: 9px; flex-shrink: 0; }
 @media(max-width:900px){ .feature-split{ grid-template-columns:1fr; gap:48px; } .feature-split.rev{ direction:ltr; } }
 
 /* Mockup box */
@@ -336,3 +338,17 @@ footer { background: var(--bg); border-top: 1px solid var(--bd); padding: 72px v
 .flex-gap { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 
 @media(prefers-reduced-motion:reduce){ .rv,.rl,.rr{ transition:none; } }
+
+/* Íconos del menú (línea, en vez de emojis) */
+.dd-item-ico svg { width: 18px; height: 18px; }
+.ico-az { background: rgba(77,143,244,.12); color: var(--am); }
+.ico-vi { background: rgba(139,92,246,.14); color: var(--vi); }
+.ico-gr { background: rgba(61,255,160,.1); color: var(--gr); }
+.ico-ro { background: rgba(255,95,143,.1); color: var(--ro); }
+
+/* Etiquetas de sección: una anotación a mano, no una píldora en mayúsculas. */
+.chip { font-family: 'Caveat', cursive; font-size: 23px; font-weight: 600; letter-spacing: 0; text-transform: none; padding: 0; background: none; border: none; border-radius: 0; color: var(--am); line-height: 1.1; }
+.chip::before { display: none; }
+.chip.az { color: var(--am); background: none; }
+.chip.vi { color: var(--vi); background: none; }
+.chip.gr { color: var(--gr); background: none; }

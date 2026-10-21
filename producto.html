@@ -7,7 +7,7 @@
 <meta name="description" content="Diseña emails con un editor drag and drop y crea landing pages con formularios, sin código. Exporta en HTML, PNG, JPG o GIF y publica con un clic.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="/img/favicon.png">
 <meta name="theme-color" content="#0b0c10">
 <!-- SEO -->
@@ -171,28 +171,11 @@
 .vjump{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:36px}
 .vjump a{font-size:13px;font-weight:500;color:var(--tx2);border:1px solid var(--bd);background:var(--s2);border-radius:100px;padding:7px 14px;transition:all var(--r)}
 .vjump a:hover{color:var(--tx);border-color:var(--tx3)}
-/* Landing demo */
-.lp-demo{position:relative;padding:0 34px 34px 0}
-.lp-url{font-size:11.5px;color:var(--tx2);margin-left:10px;background:var(--s2);border:1px solid var(--bd);border-radius:6px;padding:2px 10px}
-.lp-pub{margin-left:auto;font-size:10.5px;font-weight:600;color:var(--gr)}
-.lp-page{background:#fff;color:#111;font-family:'Inter',sans-serif}
-.lp-nav{display:flex;align-items:center;gap:10px;padding:12px 18px;border-bottom:1px solid #eef0f4;font-size:12px}
-.lp-nav span{width:34px;height:6px;border-radius:3px;background:#e3e6ec}
-.lp-nav span:first-of-type{margin-left:auto}
-.lp-nav i{font-style:normal;font-size:10px;font-weight:700;color:#fff;background:#8B5CF6;border-radius:6px;padding:4px 10px}
-.lp-hero{display:grid;grid-template-columns:1.2fr 1fr;gap:16px;padding:26px 18px 30px;background:linear-gradient(180deg,#f6f3ff,#fff)}
-.lp-kicker{font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7c3aed;margin-bottom:6px}
-.lp-h{font-size:22px;font-weight:800;letter-spacing:-.03em;line-height:1.1;margin-bottom:6px}
-.lp-p{font-size:11px;color:#5b6070;line-height:1.5;margin-bottom:12px}
-.lp-cta{display:inline-block;font-size:10.5px;font-weight:700;color:#fff;background:#8B5CF6;border-radius:6px;padding:7px 12px}
-.lp-cta-full{display:block;text-align:center;margin-top:6px}
-.lp-form{background:#fff;border:1px solid #e6e2f5;border-radius:10px;padding:12px;box-shadow:0 8px 24px rgba(124,58,237,.12)}
-.lp-form-t{font-size:11.5px;font-weight:700;margin-bottom:8px}
-.lp-in{font-size:10px;color:#9aa0ad;border:1px solid #e3e6ec;border-radius:6px;padding:6px 8px;margin-bottom:6px;background:#fff}
-.lp-phone{position:absolute;right:0;bottom:0;width:128px;background:#fff;color:#111;border:5px solid #20232b;border-radius:20px;padding:22px 10px 14px;box-shadow:0 20px 50px rgba(0,0,0,.6);font-family:'Inter',sans-serif}
-.lp-phone-k{font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#7c3aed}
-.lp-phone-h{font-size:13px;font-weight:800;letter-spacing:-.02em;margin:3px 0 10px;line-height:1.15}
-@media(max-width:600px){.lp-hero{grid-template-columns:1fr}.lp-phone{display:none}.lp-demo{padding:0}}
+.pair{display:grid;grid-template-columns:minmax(0,1fr) 150px;gap:14px;align-items:end}
+.phone{border-radius:24px;overflow:hidden;border:5px solid #20232b;background:#20232b;box-shadow:0 24px 60px rgba(0,0,0,.6)}
+.phone img,.shot img{display:block;width:100%;height:auto}
+.shot{border-radius:14px;overflow:hidden;border:1px solid var(--bd);box-shadow:0 30px 70px rgba(0,0,0,.5)}
+.compat-grid{grid-template-columns:repeat(5,1fr)}
 </style>
 </head>
 <body>
@@ -205,12 +188,12 @@
       <div class="nav-dd">
         <a href="/producto" class="nav-link active" data-path="/producto">Producto <svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <div class="nav-dd-menu">
-          <div class="dd-group">Dos mesas de trabajo</div>
-          <a href="/producto#email" class="dd-item"><div class="dd-item-ico" style="background:rgba(77,143,244,.12)">✉️</div><div><div class="dd-item-t">Email marketing</div><div class="dd-item-d">Campañas que se ven bien en cualquier bandeja</div></div></a>
-          <a href="/producto#landing" class="dd-item"><div class="dd-item-ico" style="background:rgba(139,92,246,.12)">🌐</div><div><div class="dd-item-t">Landing <span class="dd-new">Nuevo</span></div><div class="dd-item-d">Páginas web con formularios, sin código</div></div></a>
-          <div class="dd-group">En ambas</div>
-          <a href="/producto#ia" class="dd-item"><div class="dd-item-ico" style="background:rgba(61,255,160,.1)">✦</div><div><div class="dd-item-t">Inteligencia</div><div class="dd-item-d">Revisa el texto y si está listo para publicar</div></div></a>
-          <a href="/producto#colaboracion" class="dd-item"><div class="dd-item-ico" style="background:rgba(255,95,143,.1)">👥</div><div><div class="dd-item-t">Equipo y marcas</div><div class="dd-item-d">Proyectos por marca y cursores en vivo</div></div></a>
+          <div class="dd-group">Lo que diseñas</div>
+          <a href="/producto#email" class="dd-item"><div class="dd-item-ico ico-az"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></div><div><div class="dd-item-t">Email marketing</div><div class="dd-item-d">Campañas que se ven bien en cualquier bandeja</div></div></a>
+          <a href="/producto#landing" class="dd-item"><div class="dd-item-ico ico-vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9M12 3C9.5 5.6 8.2 8.6 8.2 12s1.3 6.4 3.8 9"/></svg></div><div><div class="dd-item-t">Landing <span class="dd-new">Nuevo</span></div><div class="dd-item-d">Páginas web con formularios, sin código</div></div></a>
+          <div class="dd-group">Para las dos</div>
+          <a href="/producto#ia" class="dd-item"><div class="dd-item-ico ico-gr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l1.9 5 5 1.9-5 1.9-1.9 5-1.9-5-5-1.9 5-1.9z"/><path d="M19 15.5l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></svg></div><div><div class="dd-item-t">Inteligencia</div><div class="dd-item-d">Revisa el texto y si está listo para publicar</div></div></a>
+          <a href="/producto#colaboracion" class="dd-item"><div class="dd-item-ico ico-ro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.4-3.4 3.2-6 6.5-6s6.1 2.6 6.5 6"/><path d="M15.5 4.6a3.5 3.5 0 0 1 0 6.8M21.5 20c-.3-2.6-1.9-4.8-4.2-5.7"/></svg></div><div><div class="dd-item-t">Equipo y marcas</div><div class="dd-item-d">Proyectos por marca y cursores en vivo</div></div></a>
         </div>
       </div>
       <a href="/plantillas" class="nav-link" data-path="/plantillas">Plantillas</a>
@@ -237,7 +220,7 @@
 <!-- PAGE HERO -->
 <div class="page-hero">
   <div class="page-hero-inner">
-    <div class="chip vi">Dos mesas de trabajo</div>
+    <div class="chip vi">emails y landings, en uno</div>
     <h1 class="heading">Editor de emails y constructor de landing pages, en uno.</h1>
     <p class="lead">Desde el primer bloque hasta el envío y la publicación: Email marketing y Landing funcionan con la misma lógica, para que la campaña y su página se vean como una sola.</p>
     <div class="flex-center flex-gap mt-md">
@@ -253,33 +236,19 @@
   <div class="feat-inner">
     <div class="feature-split">
       <div class="feat-text rl">
-        <div class="chip">Email marketing</div>
-        <h2>Diseña con libertad.<br>Sin tocar una línea de código.</h2>
-        <p>El editor de bloques más intuitivo para emails. Arrastra elementos, personaliza estilos, previsualiza en múltiples dispositivos — todo en la misma pantalla.</p>
-        <p>Cada bloque es completamente personalizable: tipografía, colores, espaciado, bordes, sombras y más. El inspector de la derecha actualiza en tiempo real mientras editas.</p>
+        <div class="chip">el correo</div>
+        <h2>Arrastras, sueltas<br>y el correo queda listo.</h2>
+        <p>A la izquierda están los bloques: texto, imagen, botón, columnas, redes sociales. Los arrastras al correo y, al hacer clic en uno, sus ajustes aparecen a la derecha.</p>
+        <p>Cambias tipografía, colores, márgenes y bordes, y lo ves al instante. Con un clic pasas a la vista de celular para revisar cómo llega al teléfono.</p>
         <ul class="feat-points">
-          <li>Más de 20 tipos de bloques: texto, imagen, botón, columnas, video, separador y más</li>
-          <li>Previsualización instantánea en desktop y móvil</li>
-          <li>Historial de deshacer/rehacer ilimitado</li>
-          <li>Arrastrar y soltar con guías de alineación inteligente</li>
-          <li>Editor de texto enriquecido WYSIWYG para cada bloque</li>
+          <li>Bloques de texto, imagen, botón, columnas, separador y redes sociales</li>
+          <li>Vista de escritorio y de celular, y vista previa antes de exportar</li>
+          <li>Deshacer, rehacer e historial de versiones</li>
+          <li>Pestañas para tener varios correos abiertos a la vez</li>
+          <li>Importa un HTML que ya tengas y sigue editándolo aquí</li>
         </ul>
       </div>
-      <div class="mockup rr">
-        <div class="mockup-bar"><div class="mac-dots"><div class="mac-dot"></div><div class="mac-dot"></div><div class="mac-dot"></div></div><span style="font-size:12px;color:var(--tx2);margin-left:10px">Editor — Campaña de Verano</span></div>
-        <div style="background:#1a1828;padding:20px;display:flex;flex-direction:column;align-items:center;gap:12px;min-height:280px">
-          <div style="background:#fff;border-radius:6px;width:100%;max-width:320px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.4)">
-            <div style="background:#1a1a2e;padding:14px;display:flex;align-items:center;justify-content:center;gap:6px"><div style="width:16px;height:16px;background:#4D8FF4;border-radius:4px"></div><span style="color:#fff;font-weight:700;font-size:12px;font-family:'Inter',sans-serif">BrandCo</span></div>
-            <div style="height:120px;background:linear-gradient(135deg,#1D1F3A,#2D1F5E);position:relative;overflow:hidden"><div style="position:absolute;bottom:12px;left:14px"><div style="color:#fff;font-weight:700;font-size:13px;font-family:'Inter',sans-serif">Gran Oferta de Verano</div><div style="color:rgba(255,255,255,.6);font-size:10px;font-family:'Inter',sans-serif">Solo por tiempo limitado</div></div></div>
-            <div style="padding:14px;outline:2px solid #4D8FF4;outline-offset:-2px;position:relative"><div style="position:absolute;top:-8px;right:8px;background:#4D8FF4;color:#111;font-size:7.5px;font-weight:800;padding:2px 6px;border-radius:3px;font-family:'Inter',sans-serif">EDITANDO</div><div style="font-size:13px;font-weight:700;color:#111;font-family:'Inter',sans-serif;margin-bottom:5px">No te pierdas esta oportunidad</div><div style="font-size:11px;color:#666;font-family:'Inter',sans-serif;line-height:1.55">Hemos preparado algo especial para esta temporada. ¡Descuentos hasta el 50%!</div></div>
-            <div style="margin:10px 14px;background:#4D8FF4;border-radius:5px;padding:9px;text-align:center"><span style="font-size:11px;font-weight:700;color:#0F0E1A;font-family:'Inter',sans-serif">Ver ofertas →</span></div>
-          </div>
-          <div style="display:flex;gap:8px;align-self:stretch;justify-content:center">
-            <div style="background:var(--s3);border:1px solid var(--am);border-radius:6px;padding:5px 14px;font-size:10.5px;font-weight:600;color:var(--am)">🖥 Escritorio</div>
-            <div style="background:transparent;border:1px solid var(--bd);border-radius:6px;padding:5px 14px;font-size:10.5px;color:var(--tx2)">📱 Móvil</div>
-          </div>
-        </div>
-      </div>
+      <div class="shot rr"><img src="/img/app/editor-email.webp" alt="Editor de emails de MailBuilder" width="1920" height="1200" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -289,10 +258,10 @@
   <div class="feat-inner">
     <div class="feature-split rev">
       <div class="feat-text rr">
-        <div class="chip vi">Landing · Nuevo</div>
-        <h2>La página a la que lleva<br>tu email, sin código.</h2>
-        <p>La segunda mesa de trabajo de MailBuilder: páginas web con formularios, diseñadas con la misma lógica que tus emails y con la marca del proyecto ya aplicada.</p>
-        <p>Diseña en escritorio y en celular, con capas, guías y auto layout como en una herramienta de diseño profesional. Cuando está lista, la publicas con un clic.</p>
+        <div class="chip vi">la landing (nuevo)</div>
+        <h2>La página a la que lleva<br>tu correo.</h2>
+        <p>Se arma igual que un correo: eliges una plantilla de sitio y cambias textos, imágenes y colores. Si ya diseñaste el email de la campaña, la landing usa la misma marca del proyecto.</p>
+        <p>Tienes capas, grupos y guías como en una herramienta de diseño, y una vista de celular con su propio orden. Cuando está lista, la publicas y los registros del formulario te llegan a «Respuestas».</p>
         <ul class="feat-points">
           <li>Plantillas de sitio por objetivo: captación, producto, evento, lista de espera y más</li>
           <li>Formularios que guardan cada registro, listos para revisar</li>
@@ -302,34 +271,7 @@
         </ul>
         <a href="https://mailbuilder.site/landing" data-cta="/landing" class="btn btn-primary btn-icon" style="margin-top:28px">Crear mi primera landing <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
-      <div class="lp-demo rl" aria-hidden="true">
-        <div class="mockup">
-          <div class="mockup-bar"><div class="mac-dots"><div class="mac-dot"></div><div class="mac-dot"></div><div class="mac-dot"></div></div><span class="lp-url">tumarca.com/lanzamiento</span><span class="lp-pub">● Publicada</span></div>
-          <div class="lp-page">
-            <div class="lp-nav"><b>BrandCo</b><span></span><span></span><span></span><i>Registrarme</i></div>
-            <div class="lp-hero">
-              <div>
-                <div class="lp-kicker">Evento · 14 de noviembre</div>
-                <div class="lp-h">Lanzamiento 2026</div>
-                <div class="lp-p">Conoce lo nuevo antes que nadie. Cupos limitados.</div>
-                <div class="lp-cta">Quiero mi cupo →</div>
-              </div>
-              <div class="lp-form">
-                <div class="lp-form-t">Reserva tu lugar</div>
-                <div class="lp-in">Nombre</div>
-                <div class="lp-in">Correo</div>
-                <div class="lp-cta lp-cta-full">Registrarme</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="lp-phone">
-          <div class="lp-phone-k">Evento</div>
-          <div class="lp-phone-h">Lanzamiento 2026</div>
-          <div class="lp-in">Correo</div>
-          <div class="lp-cta lp-cta-full">Registrarme</div>
-        </div>
-      </div>
+      <div class="pair rl"><div class="shot"><img src="/img/app/editor-landing.webp" alt="Editor de landing pages de MailBuilder" width="1920" height="1200" loading="lazy"></div><div class="phone"><img src="/img/app/landing-movil.webp" alt="La misma landing en celular" width="700" height="1169" loading="lazy"></div></div>
     </div>
   </div>
 </section>
@@ -339,24 +281,24 @@
   <div class="feat-inner">
     <div class="feature-split rev">
       <div class="feat-text rr">
-        <div class="chip gr">Exporta y publica</div>
+        <div class="chip gr">cuando está listo</div>
         <h2>Tu email. Cualquier formato.<br>Un clic.</h2>
-        <p>HTML limpio y compatible con más de 40 clientes de email. PNG y JPG en alta resolución para redes sociales y publicidad. GIF animado generado automáticamente para campañas que se destacan.</p>
+        <p>El HTML sale con los estilos en línea, que es lo que piden los clientes de correo. Si el correo va a una presentación o a redes, lo descargas como imagen. Y si quieres llamar la atención, como un GIF que recorre el correo completo.</p>
         <ul class="feat-points">
-          <li>HTML compatible con Gmail, Outlook, Apple Mail, Yahoo, Thunderbird y 35+ más</li>
-          <li>PNG y JPG: resolución 2x para pantallas Retina</li>
-          <li>GIF animado: cada sección del email se convierte en un frame</li>
-          <li>Sin pérdida de estilos, sin imágenes en blanco, sin sorpresas</li>
-          <li>Previsualización antes de exportar en cualquier formato</li>
+          <li>HTML listo para Mailchimp, Klaviyo, ActiveCampaign o tu plataforma</li>
+          <li>PNG sin pérdida de calidad, para presentaciones y piezas impresas</li>
+          <li>JPG liviano, para compartir rápido por WhatsApp o Slack</li>
+          <li>GIF con el recorrido del correo completo</li>
+          <li>La landing, además, se puede descargar en HTML</li>
         </ul>
       </div>
       <div class="exp-demo rl">
         <div class="exp-hdr"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" stroke="var(--tx2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:13px;font-weight:600">Exportar campaña</span></div>
         <div class="fmt-grid">
-          <div class="fmt-card html"><div class="fmt-icon">📄</div><div class="fmt-name">HTML</div><div class="fmt-desc">Para plataformas de email. Código limpio y compatible.</div></div>
-          <div class="fmt-card png"><div class="fmt-icon">🖼</div><div class="fmt-name">PNG</div><div class="fmt-desc">Alta resolución para redes sociales y piezas visuales.</div></div>
-          <div class="fmt-card jpg"><div class="fmt-icon">📸</div><div class="fmt-name">JPG</div><div class="fmt-desc">Optimizado para web, menor peso, máxima calidad.</div></div>
-          <div class="fmt-card gif"><div class="fmt-icon">✨</div><div class="fmt-name">GIF</div><div class="fmt-desc">Animación automática. Destácate en la bandeja.</div></div>
+          <div class="fmt-card html"><div class="fmt-name">HTML</div><div class="fmt-desc">Para plataformas de email. Código limpio y compatible.</div></div>
+          <div class="fmt-card png"><div class="fmt-name">PNG</div><div class="fmt-desc">Alta resolución para redes sociales y piezas visuales.</div></div>
+          <div class="fmt-card jpg"><div class="fmt-name">JPG</div><div class="fmt-desc">Optimizado para web, menor peso, máxima calidad.</div></div>
+          <div class="fmt-card gif"><div class="fmt-name">GIF</div><div class="fmt-desc">Animación automática. Destácate en la bandeja.</div></div>
         </div>
       </div>
     </div>
@@ -368,26 +310,18 @@
   <div class="feat-inner">
     <div class="feature-split">
       <div class="feat-text rl">
-        <div class="chip vi">Inteligencia · en ambas</div>
+        <div class="chip vi">antes de enviar o publicar</div>
         <h2>Revisión inteligente<br>mientras diseñas.</h2>
-        <p>El panel de Inteligencia analiza tu email o tu landing mientras trabajas: detecta problemas de accesibilidad, revisa el texto, estima el riesgo de spam en los correos y te dice si la página está lista para publicar.</p>
+        <p>Mientras trabajas, el panel de Inteligencia revisa el correo o la landing como lo haría un compañero con buen ojo. Te dice qué encontró, por qué importa y cómo arreglarlo.</p>
         <ul class="feat-points">
-          <li>Puntuación de accesibilidad según estándares WCAG AA</li>
-          <li>Análisis de riesgo de spam con sugerencias específicas</li>
-          <li>Mejoras de línea de asunto para aumentar la tasa de apertura</li>
-          <li>Peso del email y tiempo de carga estimado</li>
-          <li>Sugerencias de copy para el llamado a la acción</li>
+          <li>Ortografía y redacción, con LanguageTool</li>
+          <li>Accesibilidad: que cualquiera pueda leerlo, también con lector de pantalla</li>
+          <li>Botones o enlaces que no llevan a ningún lado</li>
+          <li>Palabras que pueden mandar tu correo a spam</li>
+          <li>En la landing: si ya está lista para publicar</li>
         </ul>
       </div>
-      <div class="ia-demo rr">
-        <div class="ia-hdr"><div style="font-size:13px;font-weight:600;display:flex;align-items:center;gap:8px"><span>✦</span> Panel de IA <span style="background:rgba(61,255,160,.12);color:var(--gr);border:1px solid rgba(61,255,160,.25);padding:2px 9px;border-radius:100px;font-size:10px;font-weight:700">ACTIVO</span></div><div class="ia-score"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="var(--gr)" stroke-width="2"/><path d="M9 12l2 2 4-4" stroke="var(--gr)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>92/100</div></div>
-        <div class="ia-body">
-          <div class="ia-check"><div class="ia-check-ico ok">✓</div><div style="flex:1"><div class="ia-check-n">Accesibilidad</div><div class="ia-check-d">Contraste de texto cumple WCAG AA</div></div><div class="ia-badge ok">Aprobado</div></div>
-          <div class="ia-check"><div class="ia-check-ico ok">✓</div><div style="flex:1"><div class="ia-check-n">Puntuación de spam</div><div class="ia-check-d">Riesgo bajo — palabras clave limpias</div></div><div class="ia-badge ok">Bajo riesgo</div></div>
-          <div class="ia-check"><div class="ia-check-ico w">!</div><div style="flex:1"><div class="ia-check-n">Línea de asunto</div><div class="ia-check-d">"Gran Oferta" puede mejorar la apertura</div></div><div class="ia-badge w">Sugerencia</div></div>
-          <div class="ia-check"><div class="ia-check-ico t">💡</div><div style="flex:1"><div class="ia-check-n">Llamado a la acción</div><div class="ia-check-d">El botón está bien posicionado. Buen trabajo.</div></div><div class="ia-badge t">Optimizado</div></div>
-        </div>
-      </div>
+      <div class="shot rr"><img src="/img/app/inteligencia-editor.webp" alt="Panel de Inteligencia revisando un email" width="1600" height="1109" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -397,28 +331,19 @@
   <div class="feat-inner">
     <div class="feature-split rev">
       <div class="feat-text rr">
-        <div class="chip az">Equipo y marcas · en ambas</div>
-        <h2>Tu equipo, en el<br>mismo lienzo.</h2>
-        <p>Mira los cursores de tus compañeros en vivo, chatea sin salir del editor y deja de enviar archivos con "v3_FINAL_2_revisado.html" de ida y vuelta.</p>
+        <div class="chip az">si llevas varias marcas</div>
+        <h2>Cada cliente en su carpeta,<br>y tu equipo adentro.</h2>
+        <p>Cada marca es un proyecto, con su portada, sus correos y sus landings. Todo tu espacio de trabajo lo ve, y se acabó mandar archivos llamados «v3_FINAL_revisado.html» por chat.</p>
         <ul class="feat-points">
-          <li>Cursores en vivo con el nombre de cada miembro visible en el canvas</li>
-          <li>Chat del canvas estilo Figma — abre con "/" para escribir</li>
-          <li>Sesiones simultáneas sin conflictos de versiones</li>
-          <li>Historial de cambios: quién hizo qué y cuándo</li>
+          <li>Ves en vivo quién está editando el mismo correo</li>
+          <li>Comentarios sobre la pieza, sin salir del editor</li>
+          <li>Mueve un correo o una landing de un proyecto a otro</li>
+          <li>Historial de versiones para volver atrás</li>
           <li>Proyectos por marca: los emails y las landings de cada cliente, juntos</li>
           <li>Espacio de trabajo compartido, con roles por persona y por proyecto</li>
         </ul>
       </div>
-      <div class="collab-demo rl">
-        <div class="collab-user"><div class="cu-av" style="background:#5B8EFF">A</div><div style="flex:1"><div class="cu-name">Andrés Mora</div><div class="cu-status">Editando el bloque de texto principal</div></div><div class="cu-dot-on"></div></div>
-        <div class="collab-user"><div class="cu-av" style="background:#A78BFA">M</div><div style="flex:1"><div class="cu-name">María González</div><div class="cu-status">Revisando la sección del botón</div></div><div class="cu-dot-on"></div></div>
-        <div class="collab-user"><div class="cu-av" style="background:#4D8FF4;color:#111">J</div><div style="flex:1"><div class="cu-name">Juliana Ríos</div><div class="cu-status">Conectada · sin actividad reciente</div></div><div class="cu-dot-idle"></div></div>
-        <div class="collab-chat">
-          <div class="chat-msg"><div class="chat-bub a">Andrés: ¿Usamos el azul de la marca en el botón?</div></div>
-          <div class="chat-msg right"><div class="chat-bub b">María: Sí, queda mejor con el fondo oscuro 👍</div></div>
-          <div class="chat-msg"><div class="chat-bub a">Andrés: Listo, ya lo cambié ✓</div></div>
-        </div>
-      </div>
+      <div class="shot rl"><img src="/img/app/proyectos.webp" alt="Proyectos por marca en MailBuilder" width="1600" height="1218" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -427,17 +352,16 @@
 <section class="feat-section" style="padding-bottom:0">
   <div class="feat-inner">
     <div class="sh sh-center rv">
-      <div class="chip">Compatibilidad garantizada</div>
-      <h2 class="heading" style="margin-top:14px">Tu email se ve perfecto<br>en todos los clientes.</h2>
-      <p class="lead">Probamos y garantizamos que el HTML exportado funcione sin problemas en los principales clientes de correo del mundo.</p>
+      <div class="chip">dónde se abre tu correo</div>
+      <h2 class="heading" style="margin-top:14px">Tu correo, bien en<br>las bandejas más usadas.</h2>
+      <p class="lead">El HTML se exporta con estilos en línea y tablas, la forma en que lo leen bien los clientes de correo más usados.</p>
     </div>
     <div class="compat-grid">
-      <div class="compat-item rv d1"><div class="compat-icon">📧</div><div class="compat-name">Gmail</div><div class="compat-badge">✓ Compatible</div></div>
-      <div class="compat-item rv d2"><div class="compat-icon">💼</div><div class="compat-name">Outlook</div><div class="compat-badge">✓ Compatible</div></div>
-      <div class="compat-item rv d3"><div class="compat-icon">🍎</div><div class="compat-name">Apple Mail</div><div class="compat-badge">✓ Compatible</div></div>
-      <div class="compat-item rv d4"><div class="compat-icon">📮</div><div class="compat-name">Yahoo Mail</div><div class="compat-badge">✓ Compatible</div></div>
-      <div class="compat-item rv"><div class="compat-icon">🦅</div><div class="compat-name">Thunderbird</div><div class="compat-badge">✓ Compatible</div></div>
-      <div class="compat-item rv d1"><div class="compat-icon">📬</div><div class="compat-name">+35 más</div><div class="compat-badge">✓ Todos</div></div>
+      <div class="compat-item rv d1"><div class="compat-name">Gmail</div><div class="compat-badge">✓ Compatible</div></div>
+      <div class="compat-item rv d2"><div class="compat-name">Outlook</div><div class="compat-badge">✓ Compatible</div></div>
+      <div class="compat-item rv d3"><div class="compat-name">Apple Mail</div><div class="compat-badge">✓ Compatible</div></div>
+      <div class="compat-item rv d4"><div class="compat-name">Yahoo Mail</div><div class="compat-badge">✓ Compatible</div></div>
+      <div class="compat-item rv"><div class="compat-name">Thunderbird</div><div class="compat-badge">✓ Compatible</div></div>
     </div>
   </div>
 </section>
@@ -445,13 +369,13 @@
 <!-- CTA -->
 <div class="cta-band" style="margin-top:100px">
   <div class="cta-band-inner">
-    <h2 class="rv">¿Listo para crear<br>campañas <em>que funcionan</em>?</h2>
-    <p class="rv d1">Prueba MailBuilder gratis. Sin tarjeta de crédito, sin límite de tiempo.</p>
+    <h2 class="rv">Pruébalo con tu<br>próxima <em>campaña.</em></h2>
+    <p class="rv d1">Crea tu cuenta gratis y arma el correo y su landing con la marca de tu cliente.</p>
     <div class="cta-band-btns rv d2">
       <a href="https://mailbuilder.site/login" class="btn btn-primary btn-lg btn-icon">Empezar gratis ahora <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <a href="/precios" class="btn btn-outline btn-lg">Ver precios →</a>
     </div>
-    <p class="cta-note">✓ Plan gratuito permanente · ✓ Sin tarjeta de crédito · ✓ Cancela cuando quieras</p>
+    
   </div>
 </div>
 
